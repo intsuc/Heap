@@ -1,0 +1,22 @@
+{
+    "datapack.lint.strictFunctionCheck": [
+        "error",
+        true
+    ],
+    "datapack.lint.strictFunctionTagCheck": [
+        "error",
+        true
+    ],
+    "datapack.lint.strictObjectiveCheck": [
+        "error",
+        true
+    ],
+    "datapack.lint.strictScoreHolderCheck": [
+        "error",
+        true
+    ],
+    "datapack.lint.strictStorageCheck": [
+        "error",
+        true
+    ]
+}
