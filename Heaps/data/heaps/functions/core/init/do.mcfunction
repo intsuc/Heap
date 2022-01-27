@@ -13,12 +13,8 @@
 #>
 # @internal
 #declare storage heaps.immutable:
-
-# Create node with capacity 16.
-data modify storage heaps.immutable: dummy set value [0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b, 0b]
-data modify storage heaps.immutable: node set from storage heaps.immutable: dummy
-data remove storage heaps.immutable: dummy
-data modify storage heaps.immutable: node[] set value {}
+data modify storage heaps.immutable: node_size set value 16
+data modify storage heaps.immutable: node set value [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 #>
 # @internal
