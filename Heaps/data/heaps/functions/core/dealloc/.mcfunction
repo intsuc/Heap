@@ -1,6 +1,6 @@
-#> heaps:core/dealloc/weak/
+#> heaps:core/dealloc/
 #
-# @within heaps:api/dealloc/weak
+# @within heaps:api/dealloc
 #
 # @input
 #   storage heaps.temp: in
