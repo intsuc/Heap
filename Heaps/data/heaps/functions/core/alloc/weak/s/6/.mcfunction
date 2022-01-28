@@ -17,4 +17,6 @@ data modify storage heaps.free: "" append value {}
 function heaps:core/find/
 
 data modify storage heaps: in.addr set from storage heaps: out.addr
-execute if data storage heaps: in.addr run function heaps:core/alloc/weak/s/6/do
+execute if data storage heaps: in.addr run function heaps:core/touch/s/6/
+
+data modify storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].size set from storage heaps: in.size

@@ -1,4 +1,4 @@
-#> heaps:core/touch/s/4/
+#> heaps:core/touch/s/6/
 #
 # @input
 #   storage heaps: in
@@ -7,7 +7,7 @@
 #>
 # @private
 #declare score_holder heaps:addr
-execute store result score heaps:addr heaps run data get storage heaps: in.addr 65536.0
+execute store result score heaps:addr heaps run data get storage heaps: in.addr 256.0
 
 function heaps:core/touch/s/layer/0/
 
@@ -24,6 +24,12 @@ function heaps:core/touch/s/layer/2/
 
 scoreboard players operation heaps:addr heaps *= heaps:node_size heaps
 function heaps:core/touch/s/layer/3/
+
+scoreboard players operation heaps:addr heaps *= heaps:node_size heaps
+function heaps:core/touch/s/layer/4/
+
+scoreboard players operation heaps:addr heaps *= heaps:node_size heaps
+function heaps:core/touch/s/layer/5/
 
 scoreboard players reset heaps:addr heaps
 scoreboard players reset heaps:node_size heaps

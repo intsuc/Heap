@@ -15,4 +15,6 @@ data remove storage heaps.free: ""[3]
 function heaps:core/find/
 
 data modify storage heaps: in.addr set from storage heaps: out.addr
-execute if data storage heaps: in.addr run function heaps:core/alloc/weak/s/2/do
+execute if data storage heaps: in.addr run function heaps:core/touch/s/2/
+
+data modify storage heaps.vector: _[{s: 0b}]._[{s: 0b}].size set from storage heaps: in.size
