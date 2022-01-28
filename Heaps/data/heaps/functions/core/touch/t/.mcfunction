@@ -1,5 +1,7 @@
 #> heaps:core/touch/t/
 #
+# @internal
+#
 # @input
 #   storage heaps.temp: in
 #       addr: int

@@ -18,5 +18,6 @@
     "datapack.lint.strictStorageCheck": [
         "error",
         true
-    ]
+    ],
+    "datapack.env.defaultVisibility": "private"
 }
