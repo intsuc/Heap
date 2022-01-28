@@ -19,7 +19,9 @@ data modify storage heaps.immutable: node set value [{}, {}, {}, {}, {}, {}, {},
 #>
 # @internal
 #declare storage heaps.free:
-data modify storage heaps.free: "" set value [{in: [], out: [[I; 0, 256]], size: 1}, {in: [], out: [[I; 0, 65536]], size: 1}, {in: [], out: [[I; 0, 16777216]], size: 1}]
+data modify storage heaps.free: in set value []
+data modify storage heaps.free: out set value [[I; 0, 65536]]
+data modify storage heaps.free: size set value 1
 
 #>
 # @internal

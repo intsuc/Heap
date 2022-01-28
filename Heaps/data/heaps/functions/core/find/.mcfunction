@@ -18,14 +18,14 @@
   #declare score_holder heaps:count
 
 execute store result score heaps:required heaps run data get storage heaps: in.size 1.0
-execute store result score heaps:free heaps run data get storage heaps.free: ""[-3].size 1.0
+execute store result score heaps:free heaps run data get storage heaps.free: size 1.0
 scoreboard players operation heaps:count heaps = heaps:free heaps
 
 data remove storage heaps: out.addr
 
 function heaps:core/find/check
 
-execute store result storage heaps.free: ""[-3].size int 1.0 run scoreboard players get heaps:free heaps
+execute store result storage heaps.free: size int 1.0 run scoreboard players get heaps:free heaps
 
 scoreboard players reset heaps:available heaps
 scoreboard players reset heaps:required heaps
