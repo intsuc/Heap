@@ -3,15 +3,15 @@
 # @within heaps:api/dealloc/weak/s
 #
 # @input
-#   storage heaps: in
+#   storage heaps.temp: in
 #       addr: int
 
 function heaps:core/touch/s/
 
 data modify storage heaps.free: out append value [I; 0, 0]
-data modify storage heaps.free: out[-1][0] set from storage heaps: in.addr
-data modify storage heaps.free: out[-1][1] set from storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].size
-data remove storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].size
+data modify storage heaps.free: out[-1][0] set from storage heaps.temp: in.addr
+data modify storage heaps.free: out[-1][1] set from storage heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].size
+data remove storage heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].size
 
 #>
 # @private

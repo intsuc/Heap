@@ -3,11 +3,11 @@
 # @internal
 #
 # @input
-#   storage heaps: in
+#   storage heaps.temp: in
 #       size: int
 #
 # @output
-#   storage heaps: out
+#   storage heaps.temp: out
 #       addr: int?
 
 #>
@@ -17,11 +17,11 @@
   #declare score_holder heaps:free
   #declare score_holder heaps:count
 
-execute store result score heaps:required heaps run data get storage heaps: in.size 1.0
+execute store result score heaps:required heaps run data get storage heaps.temp: in.size 1.0
 execute store result score heaps:free heaps run data get storage heaps.free: size 1.0
 scoreboard players operation heaps:count heaps = heaps:free heaps
 
-data remove storage heaps: out.addr
+data remove storage heaps.temp: out.addr
 
 function heaps:core/find/check
 

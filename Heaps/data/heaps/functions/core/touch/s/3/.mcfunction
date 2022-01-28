@@ -9,8 +9,8 @@
 # @within heaps:core/touch/s/3/**
 #declare score_holder heaps:addr
 
-data remove storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[].s
-execute unless data storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._ run data modify storage heaps.vector: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._ set from storage heaps.immutable: node
+data remove storage heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[].s
+execute unless data storage heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._ run data modify storage heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._ set from storage heaps.immutable: node
 
 execute if score heaps:addr heaps matches 0..1073741823 run function heaps:core/touch/s/3/0
 execute if score heaps:addr heaps matches 1073741824.. run function heaps:core/touch/s/3/1

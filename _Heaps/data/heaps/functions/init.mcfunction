@@ -9,8 +9,8 @@ datapack disable "file/_Heaps"
 #declare storage heaps:
 
 #>
-# @internal
-#declare storage heaps.vector:
+# @public
+#declare storage heaps.temp:
 
 #>
 # @internal

@@ -1,13 +1,13 @@
 #> heaps:core/touch/s/
 #
 # @input
-#   storage heaps: in
+#   storage heaps.temp: in
 #       addr: int
 
 #>
 # @private
 #declare score_holder heaps:addr
-execute store result score heaps:addr heaps run data get storage heaps: in.addr 65536.0
+execute store result score heaps:addr heaps run data get storage heaps.temp: in.addr 65536.0
 
 function heaps:core/touch/s/0/
 
