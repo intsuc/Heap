@@ -28,8 +28,3 @@ data modify storage heaps.free: size set value 1
 #>
 # @internal
 scoreboard objectives add heaps dummy
-
-#>
-# @internal
-#declare storage heaps.initialized:
-data modify storage heaps.initialized: "" set value 0b
