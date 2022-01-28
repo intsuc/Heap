@@ -9,7 +9,7 @@
 # @within heaps:core/touch/-/0/**
 #declare score_holder heaps:addr
 
-execute store result storage heaps: cache[0] int 1.0 run scoreboard players get heaps:addr heaps
+execute store result storage heaps: cache_-[0] int 1.0 run scoreboard players get heaps:addr heaps
 
 data remove storage heaps: _[].-
 execute unless data storage heaps: _ run data modify storage heaps: _ set from storage heaps.immutable: node

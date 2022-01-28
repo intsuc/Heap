@@ -8,14 +8,24 @@
 
 function heaps:core/touch/-/
 
-data remove storage heaps: _[].s
-data modify storage heaps: _[{-: 0b}].s set value 0b
+#>
+# @private
+  #declare score_holder heaps:addr
+  #declare score_holder heaps:cache
 
-data remove storage heaps: _[{-: 0b}]._[].s
-data modify storage heaps: _[{-: 0b}]._[{-: 0b}].s set value 0b
+execute store result score heaps:addr heaps run data get storage heaps.temp: in.addr 1.0
 
-data remove storage heaps: _[{-: 0b}]._[{-: 0b}]._[].s
-data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}].s set value 0b
+execute store result score heaps:cache heaps run data get storage heaps: cache_s[0] 1.0
+execute unless score heaps:addr heaps = heaps:cache heaps run function heaps:core/touch/s/0
 
-data remove storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[].s
-data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].s set value 0b
+execute store result score heaps:cache heaps run data get storage heaps: cache_s[1] 1.0
+execute unless score heaps:addr heaps = heaps:cache heaps run function heaps:core/touch/s/1
+
+execute store result score heaps:cache heaps run data get storage heaps: cache_s[2] 1.0
+execute unless score heaps:addr heaps = heaps:cache heaps run function heaps:core/touch/s/2
+
+execute store result score heaps:cache heaps run data get storage heaps: cache_s[3] 1.0
+execute unless score heaps:addr heaps = heaps:cache heaps run function heaps:core/touch/s/3
+
+scoreboard players reset heaps:addr heaps
+scoreboard players reset heaps:cache heaps
