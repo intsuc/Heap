@@ -22,10 +22,7 @@ execute store result score heaps:free heaps run data get storage heaps.free: siz
 scoreboard players operation heaps:count heaps = heaps:free heaps
 
 data remove storage heaps.temp: out.addr
-
 function heaps:core/find/check
-
-execute store result storage heaps.free: size int 1.0 run scoreboard players get heaps:free heaps
 
 scoreboard players reset heaps:available heaps
 scoreboard players reset heaps:required heaps
