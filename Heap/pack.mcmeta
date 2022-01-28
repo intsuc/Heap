@@ -1,0 +1,6 @@
+{
+    "pack": {
+        "description": "Weakly managed heap",
+        "pack_format": 8
+    }
+}

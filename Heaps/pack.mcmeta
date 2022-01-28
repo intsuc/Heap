@@ -1,6 +1,0 @@
-{
-    "pack": {
-        "description": "Weakly managed heaps",
-        "pack_format": 8
-    }
-}
