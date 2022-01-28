@@ -9,7 +9,7 @@
 # @private
 #declare score_holder heaps:addr
 
-execute store result storage heaps: cache_t[2] int 1.0 run scoreboard players get heaps:addr heaps
+execute store result storage heaps: cache[10] int 1.0 run scoreboard players get heaps:addr heaps
 
 data remove storage heaps: _[{-: 0b}]._[{-: 0b}]._[].t
 data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}].t set value 0b

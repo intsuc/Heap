@@ -7,9 +7,7 @@ datapack disable "file/_Heaps"
 #>
 # @public
 #declare storage heaps:
-data modify storage heaps: cache_- set value [B; -1b, -1b, -1b, -1b]
-data modify storage heaps: cache_s set value [B; -1b, -1b, -1b, -1b]
-data modify storage heaps: cache_t set value [B; -1b, -1b, -1b, -1b]
+data modify storage heaps: cache set value [B; -1b, -1b, -1b, -1b, -1b, -1b, -1b, -1b, -1b, -1b, -1b, -1b]
 
 #>
 # @public
