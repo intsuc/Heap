@@ -25,7 +25,7 @@ execute store result score heaps:size_top heaps run data get storage heaps.free:
 scoreboard players operation heaps:end_top heaps += heaps:size_top heaps
 
 execute if score heaps:end heaps = heaps:addr_top heaps run function heaps:core/dealloc/merge_front
-execute if score heaps:end_top heaps = heaps:addr heaps run function heaps:core/dealloc/merge_back
+execute if score heaps:end_top heaps = heaps:addr heaps store result storage heaps.free: out[-1][1] int 1.0 run scoreboard players operation heaps:size heaps += heaps:size_top heaps
 execute unless score heaps:end heaps = heaps:addr_top heaps unless score heaps:end_top heaps = heaps:addr heaps run function heaps:core/dealloc/append
 
 data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
