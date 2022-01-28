@@ -11,7 +11,7 @@ function heaps:core/touch/-/
 data modify storage heaps.free: out append value [I; 0, 0]
 data modify storage heaps.free: out[-1][0] set from storage heaps.temp: in.addr
 data modify storage heaps.free: out[-1][1] set from storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].size
-data modify storage heaps: [{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
+data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
 
 #>
 # @private

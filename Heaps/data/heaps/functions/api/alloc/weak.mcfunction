@@ -1,4 +1,4 @@
-#> heaps:api/alloc/weak/s
+#> heaps:api/alloc/weak
 #
 # @api
 #
@@ -10,4 +10,4 @@
 #   storage heaps.temp: out
 #       addr: int?
 
-function heaps:core/alloc/weak/s/
+function heaps:core/alloc/weak/

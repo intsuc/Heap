@@ -1,6 +1,6 @@
 #> heaps:core/touch/s/
 #
-# @internal
+# @within heaps:api/touch/s
 #
 # @input
 #   storage heaps.temp: in
