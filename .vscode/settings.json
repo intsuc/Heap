@@ -1,4 +1,5 @@
 {
+    "datapack.env.defaultVisibility": "private",
     "datapack.lint.strictFunctionCheck": [
         "error",
         true
@@ -18,6 +19,5 @@
     "datapack.lint.strictStorageCheck": [
         "error",
         true
-    ],
-    "datapack.env.defaultVisibility": "private"
+    ]
 }
