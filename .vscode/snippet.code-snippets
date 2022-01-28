@@ -2,21 +2,21 @@
     "path": {
         "scope": "mcfunction",
         "prefix": "_",
-        "body": "heaps: _[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}].$2"
+        "body": "heap: _[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}].$2"
     },
     "path_-": {
         "scope": "mcfunction",
         "prefix": "_-",
-        "body": "heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].$1"
+        "body": "heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].$1"
     },
     "path_s": {
         "scope": "mcfunction",
         "prefix": "_s",
-        "body": "heaps: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].$1"
+        "body": "heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}].$1"
     },
     "path_t": {
         "scope": "mcfunction",
         "prefix": "_t",
-        "body": "heaps: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}].$1"
+        "body": "heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}].$1"
     }
 }
