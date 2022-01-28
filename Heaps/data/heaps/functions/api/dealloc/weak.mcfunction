@@ -1,4 +1,4 @@
-#> heaps:api/dealloc/weak/t
+#> heaps:api/dealloc/weak
 #
 # @api
 #
@@ -6,4 +6,4 @@
 #   storage heaps.temp: in
 #       addr: int
 
-function heaps:core/dealloc/weak/t/
+function heaps:core/dealloc/weak/
