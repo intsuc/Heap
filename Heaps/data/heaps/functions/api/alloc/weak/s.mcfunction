@@ -10,5 +10,4 @@
 #   storage heaps: out
 #       addr: int?
 
-function heaps:core/init/
 function heaps:core/alloc/weak/s/
