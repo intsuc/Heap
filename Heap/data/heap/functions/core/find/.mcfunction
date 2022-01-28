@@ -18,7 +18,7 @@
   #declare score_holder heap:count
 
 execute store result score heap:required heap run data get storage heap._: in.size 1.0
-execute store result score heap:free heap run data get storage heap.free: size 1.0
+execute store result score heap:free heap run data get storage heap.free_ring: size 1.0
 scoreboard players operation heap:count heap = heap:free heap
 
 data remove storage heap._: out.addr

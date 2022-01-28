@@ -2,8 +2,7 @@
 #
 # @within heap:core/find/**
 
-data modify storage heap.free: in append from storage heap.free: out[-1]
-data remove storage heap.free: out[-1]
+function heap:core/free_ring/next
 
 scoreboard players remove heap:count heap 1
 execute if score heap:count heap matches 1.. run function heap:core/find/check
