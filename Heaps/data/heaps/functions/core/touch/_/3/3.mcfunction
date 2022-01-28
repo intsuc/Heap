@@ -1,0 +1,8 @@
+#> heaps:core/touch/_/3/3
+#
+# @within heaps:core/touch/_/3/
+
+execute if score heaps:addr heaps matches ..-805306369 run data modify storage heaps: _[{_: 0b}]._[{_: 0b}]._[{_: 0b}]._[12]._ set value 0b
+execute if score heaps:addr heaps matches -805306368..-536870913 run data modify storage heaps: _[{_: 0b}]._[{_: 0b}]._[{_: 0b}]._[13]._ set value 0b
+execute if score heaps:addr heaps matches -536870912..-268435457 run data modify storage heaps: _[{_: 0b}]._[{_: 0b}]._[{_: 0b}]._[14]._ set value 0b
+execute if score heaps:addr heaps matches -268435456.. run data modify storage heaps: _[{_: 0b}]._[{_: 0b}]._[{_: 0b}]._[15]._ set value 0b
