@@ -7,6 +7,7 @@ datapack disable "file/_Heaps"
 #>
 # @public
 #declare storage heaps:
+data modify storage heaps: cache set value [I; -1, -1, -1, -1]
 
 #>
 # @public
@@ -15,7 +16,6 @@ datapack disable "file/_Heaps"
 #>
 # @internal
 #declare storage heaps.immutable:
-data modify storage heaps.immutable: node_size set value 16
 data modify storage heaps.immutable: node set value [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 #>
