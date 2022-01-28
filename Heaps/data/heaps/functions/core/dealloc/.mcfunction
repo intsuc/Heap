@@ -6,18 +6,33 @@
 #   storage heaps.temp: in
 #       addr: int
 
+#>
+# @within heaps:core/dealloc/**
+  #declare score_holder heaps:addr
+  #declare score_holder heaps:size
+  #declare score_holder heaps:end
+  #declare score_holder heaps:addr_top
+  #declare score_holder heaps:size_top
+  #declare score_holder heaps:end_top
+
 function heaps:core/touch/-/
 
-data modify storage heaps.free: out append value [I; 0, 0]
-data modify storage heaps.free: out[-1][0] set from storage heaps.temp: in.addr
-data modify storage heaps.free: out[-1][1] set from storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].size
+execute store result score heaps:addr heaps store result score heaps:end heaps run data get storage heaps.temp: in.addr 1.0
+execute store result score heaps:size heaps run data get storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].size 1.0
+scoreboard players operation heaps:end heaps += heaps:size heaps
+execute store result score heaps:addr_top heaps store result score heaps:end_top heaps run data get storage heaps.free: out[-1][0] 1.0
+execute store result score heaps:size_top heaps run data get storage heaps.free: out[-1][1] 1.0
+scoreboard players operation heaps:end_top heaps += heaps:size_top heaps
+
+execute if score heaps:end heaps = heaps:addr_top heaps run function heaps:core/dealloc/merge_front
+execute if score heaps:end_top heaps = heaps:addr heaps run function heaps:core/dealloc/merge_back
+execute unless score heaps:end heaps = heaps:addr_top heaps unless score heaps:end_top heaps = heaps:addr heaps run function heaps:core/dealloc/append
+
 data modify storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
 
-#>
-# @private
-#declare score_holder heaps:size
-execute store result score heaps:size heaps run data get storage heaps.free: size 1.0
-
-execute store result storage heaps.free: size int 1.0 run scoreboard players add heaps:size heaps 1
-
+scoreboard players reset heaps:addr heaps
 scoreboard players reset heaps:size heaps
+scoreboard players reset heaps:end heaps
+scoreboard players reset heaps:addr_top heaps
+scoreboard players reset heaps:size_top heaps
+scoreboard players reset heaps:end_top heaps
