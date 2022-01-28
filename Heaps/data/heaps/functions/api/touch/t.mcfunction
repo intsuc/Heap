@@ -3,7 +3,7 @@
 # @api
 #
 # @input
-#   storage heaps.temp: in
+#   storage heaps._: in
 #       addr: int
 
 function heaps:core/touch/t/

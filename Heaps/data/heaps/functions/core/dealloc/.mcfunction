@@ -3,7 +3,7 @@
 # @within heaps:api/dealloc
 #
 # @input
-#   storage heaps.temp: in
+#   storage heaps._: in
 #       addr: int
 
 #>
@@ -17,7 +17,7 @@
 
 function heaps:core/touch/-/
 
-execute store result score heaps:addr heaps store result score heaps:end heaps run data get storage heaps.temp: in.addr 1.0
+execute store result score heaps:addr heaps store result score heaps:end heaps run data get storage heaps._: in.addr 1.0
 execute store result score heaps:size heaps run data get storage heaps: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].size 1.0
 scoreboard players operation heaps:end heaps += heaps:size heaps
 execute store result score heaps:addr_top heaps store result score heaps:end_top heaps run data get storage heaps.free: out[-1][0] 1.0

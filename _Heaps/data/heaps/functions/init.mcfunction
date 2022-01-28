@@ -11,7 +11,7 @@ data modify storage heaps: cache set value [B; -1b, -1b, -1b, -1b, -1b, -1b, -1b
 
 #>
 # @public
-#declare storage heaps.temp:
+#declare storage heaps._:
 
 #>
 # @internal

@@ -3,12 +3,12 @@
 # @within heaps:api/alloc/strong
 #
 # @input
-#   storage heaps.temp: in
+#   storage heaps._: in
 #       size: int
 #
 # @output
-#   storage heaps.temp: out
+#   storage heaps._: out
 #       addr: int?
 
 function heaps:core/find/
-execute if data storage heaps.temp: out.addr run function heaps:core/alloc/strong/do
+execute if data storage heaps._: out.addr run function heaps:core/alloc/strong/do

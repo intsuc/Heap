@@ -3,11 +3,11 @@
 # @api
 #
 # @input
-#   storage heaps.temp: in
+#   storage heaps._: in
 #       size: int
 #
 # @output
-#   storage heaps.temp: out
+#   storage heaps._: out
 #       addr: int?
 
 function heaps:core/alloc/weak/
