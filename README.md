@@ -1,6 +1,6 @@
 # Heap
 
-Heap is a memory management system for Minecraft.
+Heap is a memory manager in Minecraft.
 
 ## APIs
 
