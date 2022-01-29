@@ -1,6 +1,6 @@
-#> heap:core/link/
+#> heap:core/unlink/
 #
-# @within heap:api/link
+# @within heap:api/unlink
 #
 # @input
 #   storage heap._: in
@@ -10,4 +10,4 @@
 data modify storage heap._: in.addr set from storage heap._: in.source
 function heap:core/touch/-/
 
-data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].link append from storage heap._: in.targets[]
+data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].unlink append from storage heap._: in.targets[]
