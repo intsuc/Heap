@@ -1,6 +1,6 @@
-#> heap:core/dealloc/
+#> heap:core/destruct/
 #
-# @within heap:core/dealloc/**
+# @within heap:core/destruct/**
 #
 # @input
 #   storage heap._: in

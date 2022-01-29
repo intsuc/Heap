@@ -11,4 +11,4 @@
 #   storage heap._: out
 #       addr: int?
 
-function heap:core/alloc/
+function heap:core/construct/alloc/

@@ -6,7 +6,7 @@ Heap is a memory manager in Minecraft.
 
 ### [`heap:api/alloc`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/alloc.mcfunction)
 
-### [`heap:api/free`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/free.mcfunction)
+### [`heap:api/dealloc`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/dealloc.mcfunction)
 
 ### [`heap:api/drop`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/drop.mcfunction)
 

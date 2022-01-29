@@ -6,4 +6,4 @@
 #   storage heap._: in
 #       addr: int
 
-function heap:core/dealloc/drop/
+function heap:core/destruct/drop/

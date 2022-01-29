@@ -1,4 +1,4 @@
-#> heap:core/alloc/
+#> heap:core/construct/alloc/
 #
 # @within heap:api/alloc
 #
@@ -12,4 +12,4 @@
 #       addr: int?
 
 function heap:core/find/
-execute if data storage heap._: out.addr run function heap:core/alloc/do
+execute if data storage heap._: out.addr run function heap:core/construct/alloc/do

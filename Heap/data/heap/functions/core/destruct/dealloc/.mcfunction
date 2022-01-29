@@ -1,11 +1,11 @@
-#> heap:core/dealloc/free/
+#> heap:core/destruct/dealloc/
 #
-# @within heap:api/free
+# @within heap:api/dealloc
 #
 # @input
 #   storage heap._: in
 #       addr: int
 
-function heap:core/dealloc/
+function heap:core/destruct/
 
 data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}

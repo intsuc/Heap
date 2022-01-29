@@ -1,6 +1,6 @@
-#> heap:core/alloc/do
+#> heap:core/construct/alloc/do
 #
-# @within heap:core/alloc/
+# @within heap:core/construct/alloc/
 
 data modify storage heap._: cell set value {-: 0b}
 data modify storage heap._: cell.size set from storage heap._: in.size
