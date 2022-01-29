@@ -1,6 +1,6 @@
 #> heap:core/dealloc/
 #
-# @within heap:api/dealloc
+# @within heap:core/dealloc/**
 #
 # @input
 #   storage heap._: in
@@ -11,12 +11,6 @@ function heap:core/touch/-/
 data modify storage heap.free_ring: "" append value [I; 0, 0]
 data modify storage heap.free_ring: ""[-1][0] set from storage heap._: in.addr
 data modify storage heap.free_ring: ""[-1][1] set from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].size
-
-# Cancel out `link` and `unlink`.
-  data modify storage heap.collector: link append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].unlink
-  data modify storage heap.collector: unlink append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}].link
-
-data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
 
 #>
 # @private

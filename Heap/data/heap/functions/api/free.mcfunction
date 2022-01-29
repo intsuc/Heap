@@ -1,4 +1,4 @@
-#> heap:api/dealloc
+#> heap:api/free
 #
 # @api
 #
@@ -6,4 +6,4 @@
 #   storage heap._: in
 #       addr: int
 
-function heap:core/dealloc/
+function heap:core/dealloc/free/
