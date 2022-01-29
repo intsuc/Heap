@@ -29,4 +29,4 @@ data modify storage heap.free_ring: size set value 1
 # @internal
 scoreboard objectives add heap dummy
 
-say Heap has been initialized.
+say Initialized heap
