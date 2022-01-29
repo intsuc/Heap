@@ -5,7 +5,7 @@
 # @input
 #   storage heap._: in
 #       size: int
-#       root: bool
+#       root: unit?
 #
 # @output
 #   storage heap._: out
