@@ -5,7 +5,7 @@
 # @input
 #   storage heap._: in
 #       size: int
-#       trace: string?
+#       root: bool
 #
 # @output
 #   storage heap._: out
