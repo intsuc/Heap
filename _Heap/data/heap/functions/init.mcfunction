@@ -27,6 +27,12 @@ data modify storage heap.free_ring: size set value 1
 
 #>
 # @internal
+#declare storage heap.collector:
+data modify storage heap.collector: link set value []
+data modify storage heap.collector: unlink set value []
+
+#>
+# @internal
 scoreboard objectives add heap dummy
 
 say Initialized heap
