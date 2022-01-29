@@ -1,4 +1,4 @@
-#> heap:api/alloc
+#> heap:api/new
 #
 # @api
 #
@@ -10,4 +10,4 @@
 #   storage heap._: out
 #       addr: int?
 
-function heap:core/construct/alloc/
+function heap:core/construct/new/
