@@ -1,5 +1,4 @@
 {
-    "datapack.env.defaultVisibility": "private",
     "datapack.lint.strictFunctionCheck": [
         "error",
         true
