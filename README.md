@@ -1,5 +1,7 @@
 # Heap
 
+Heap is a memory management system for Minecraft.
+
 ## APIs
 
 ### [`heap:api/alloc`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/alloc.mcfunction)

@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "A weakly managed heap",
+        "description": "A memory management system",
         "pack_format": 8
     }
 }
