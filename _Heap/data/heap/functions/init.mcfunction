@@ -14,6 +14,11 @@ data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1
 #declare storage heap._:
 
 #>
+# @public
+#declare storage heap.config:
+data modify storage heap.config: link_limit set value 6
+
+#>
 # @internal
 #declare storage heap.immutable:
 data modify storage heap.immutable: node set value [{}, {}, {}, {}, {}, {}]
