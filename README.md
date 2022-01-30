@@ -215,6 +215,15 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 
 ## Internals
 
+### Data structure
+
+Heap uses 6-ary 6-layer *filter-mapped trie* to achieve random access in `Ω(logN)`-`O(log²N)` time.
+The access time *is* almost optimal at 6-ary.
+
+### Allocator
+
+### Reference counting
+
 ## References
 
 1. Jones, R.E., Hosking, A., & Moss, J.E. (2011). The Garbage Collection Handbook: The art of automatic memory management. Chapman and Hall / CRC Applied Algorithms and Data Structures Series.
