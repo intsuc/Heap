@@ -20,7 +20,7 @@ See [Examples](https://github.com/intsuc/Heap/blob/main/Examples).
 
 Heap has two types of cells: *strong* and *weak*.
 Strong cells are always live and must be deallocated manually.
-Weak cells are live only if there is at least one reference from a strong cell and be deallocated automatically.
+Weak cells are live only if there is at least one reference from a strong cell and can be deallocated automatically.
 
 ## Heap accessors
 
