@@ -89,13 +89,13 @@ Creates references from the cell referenced by `source` to the memory cells refe
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a memory cell `b` with size 2.
-  data modify storage heap._: arg set value {size: 2}
+# Allocate a weak memory cell `b` with size 2.
+  data modify storage heap._: arg set value {size: 2, weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a memory cell `c` with size 3.
-  data modify storage heap._: arg set value {size: 3}
+# Allocate a weak memory cell `c` with size 3.
+  data modify storage heap._: arg set value {size: 3, weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
 
@@ -119,13 +119,13 @@ Removes the references from the cell referenced by `source` to the memory cells 
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a memory cell `b` with size 2.
-  data modify storage heap._: arg set value {size: 2}
+# Allocate a weak memory cell `b` with size 2.
+  data modify storage heap._: arg set value {size: 2, weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a memory cell `c` with size 3.
-  data modify storage heap._: arg set value {size: 3}
+# Allocate a weak memory cell `c` with size 3.
+  data modify storage heap._: arg set value {size: 3, weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
 
