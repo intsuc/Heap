@@ -1,6 +1,6 @@
 #> heap:api/weak
 #
-# Attempts to allocate a weak reference cell with `size`.
+# Attempts to allocate a weak ref cell with `size`.
 #
 # @api
 #
