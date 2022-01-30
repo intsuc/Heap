@@ -42,35 +42,16 @@ data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]
 
 ## APIs
 
-### [`heap:api/allocate/raw`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/allocate/raw.mcfunction)
+### [`heap:api/allocate`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/allocate.mcfunction)
 
-Attempts to allocate a raw cell with `size`.
+Attempts to allocate a memory cell with `size`.
 
 #### Examples
 
 ```mcfunction
 # Allocate a raw cell with size 6.
   data modify storage heap._: in set value {size: 6}
-  function heap:api/allocate/raw
-
-# Make the cell accessible.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
-  function heap:api/touch/t
-
-# Store `[]` in `data` in the cell.
-  data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data set value []
-```
-
-### [`heap:api/allocate/ref`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/allocate/ref.mcfunction)
-
-Attempts to allocate a ref cell with `size`.
-
-#### Examples
-
-```mcfunction
-# Allocate a ref cell with size 6.
-  data modify storage heap._: in set value {size: 6}
-  function heap:api/allocate/ref
+  function heap:api/allocate
 
 # Make the cell accessible.
   data modify storage heap._: in.ptr set from storage heap._: out.ptr
@@ -82,14 +63,14 @@ Attempts to allocate a ref cell with `size`.
 
 ### [`heap:api/deallocate`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/deallocate.mcfunction)
 
-Deallocates the cell referenced by `ptr`.
+Deallocates the memory cell referenced by `ptr`.
 
 #### Examples
 
 ```mcfunction
 # Allocate a raw cell with size 6.
   data modify storage heap._: in set value {size: 6}
-  function heap:api/allocate/raw
+  function heap:api/allocate
 
 # Deallocate the cell.
   data modify storage heap._: in.ptr set from storage heap._: out.ptr
@@ -105,17 +86,17 @@ Creates references from the cell referenced by `source` to the ref cells referen
 ```mcfunction
 # Allocate a raw cell `a` with size 1.
   data modify storage heap._: in set value {size: 1}
-  function heap:api/allocate/raw
+  function heap:api/allocate
   data modify storage _ a set from storage heap._: out.ptr
 
 # Allocate a ref cell `b` with size 2.
   data modify storage heap._: in set value {size: 2}
-  function heap:api/allocate/ref
+  function heap:api/allocate
   data modify storage _ b set from storage heap._: out.ptr
 
 # Allocate a ref cell `c` with size 3.
   data modify storage heap._: in set value {size: 3}
-  function heap:api/allocate/ref
+  function heap:api/allocate
   data modify storage _ c set from storage heap._: out.ptr
 
 # Create references `a → b` and `a → c`.
@@ -135,17 +116,17 @@ Removes the references from the cell referenced by `source` to the ref cells ref
 ```mcfunction
 # Allocate a raw cell `a` with size 1.
   data modify storage heap._: in set value {size: 1}
-  function heap:api/allocate/raw
+  function heap:api/allocate
   data modify storage _ a set from storage heap._: out.ptr
 
 # Allocate a ref cell `b` with size 2.
   data modify storage heap._: in set value {size: 2}
-  function heap:api/allocate/ref
+  function heap:api/allocate
   data modify storage _ b set from storage heap._: out.ptr
 
 # Allocate a ref cell `c` with size 3.
   data modify storage heap._: in set value {size: 3}
-  function heap:api/allocate/ref
+  function heap:api/allocate
   data modify storage _ c set from storage heap._: out.ptr
 
 # Create references `a → b` and `a → c`.

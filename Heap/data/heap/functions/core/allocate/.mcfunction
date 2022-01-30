@@ -1,15 +1,15 @@
 #> heap:core/allocate/
 #
-# @within heap:core/allocate/**
+# @within heap:api/allocate
 #
 # @input
-#   storage heap._: cell
-#       root: unit?
-#       count: int?
+#   storage heap._: in
+#       size: int
+#       weak: bool? = false
+#
+# @output
+#   storage heap._: out
+#       ptr: int?
 
-data modify storage heap._: cell.- set value 0b
-data modify storage heap._: cell.size set from storage heap._: in.size
-
-data modify storage heap._: in.ptr set from storage heap._: out.ptr
-function heap:core/touch_cell/-/
-data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._ set from storage heap._: cell
+function heap:core/find_free_cell/
+execute if data storage heap._: out.ptr run function heap:core/allocate/do

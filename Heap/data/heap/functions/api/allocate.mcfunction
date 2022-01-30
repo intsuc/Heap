@@ -1,6 +1,6 @@
-#> heap:api/allocate/ref
+#> heap:api/allocate
 #
-# Attempts to allocate a ref cell with `size`.
+# Attempts to allocate a memory cell with `size`.
 #
 # @api
 #
@@ -8,10 +8,11 @@
 #   storage heap._: in
 #       size: int
 #           The size of the cell to be allocated.
+#       weak: bool?
 #
 # @output
 #   storage heap._: out
 #       ptr: int?
 #           The pointer to the allocated cell.
 
-function heap:core/allocate/ref/
+function heap:core/allocate/
