@@ -5,7 +5,7 @@
 # @api
 #
 # @input
-#   storage heap._: in
+#   storage heap._: arg
 #       ptr: int
 #           The pointer to the cell to be touched.
 

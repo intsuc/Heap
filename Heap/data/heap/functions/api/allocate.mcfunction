@@ -5,13 +5,13 @@
 # @api
 #
 # @input
-#   storage heap._: in
+#   storage heap._: arg
 #       size: int
 #           The size of the cell to be allocated.
 #       weak: bool?
 #
 # @output
-#   storage heap._: out
+#   storage heap._: ret
 #       ptr: int?
 #           The pointer to the allocated cell.
 

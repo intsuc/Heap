@@ -5,15 +5,15 @@
 # @public
 #
 # @input
-#   storage examples._: in
+#   storage examples._: arg
 #       ptr: int
 #           The pointer to the stack.
 #
 # @output
-#   storage examples._: out
+#   storage examples._: ret
 #       is_empty: bool
 
-data modify storage heap._: in.ptr set from storage examples._: in.ptr
+data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
 function heap:api/touch/t
 
-execute store success storage examples._: out.is_empty byte 1.0 unless data storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.elements[0]
+execute store success storage examples._: ret.is_empty byte 1.0 unless data storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.elements[0]

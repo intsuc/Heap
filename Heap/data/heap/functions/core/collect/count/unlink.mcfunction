@@ -4,7 +4,7 @@
 #   heap:core/collect/count/
 #   heap:core/collect/count/unlink
 
-data modify storage heap._: in.ptr set from storage heap.collector: unlink[-1]
+data modify storage heap._: arg.ptr set from storage heap.collector: unlink[-1]
 data remove storage heap.collector: unlink[-1]
 function heap:core/touch_cell/-/
 

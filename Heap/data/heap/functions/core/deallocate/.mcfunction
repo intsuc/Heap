@@ -5,7 +5,7 @@
 function heap:core/touch_cell/-/
 
 data modify storage heap.free_ring: "" append value [I; 0, 0]
-data modify storage heap.free_ring: ""[-1][0] set from storage heap._: in.ptr
+data modify storage heap.free_ring: ""[-1][0] set from storage heap._: arg.ptr
 data modify storage heap.free_ring: ""[-1][1] set from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.size
 
 # Increment `size`.

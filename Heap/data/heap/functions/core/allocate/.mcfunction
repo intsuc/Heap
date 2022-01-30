@@ -3,13 +3,13 @@
 # @within heap:api/allocate
 #
 # @input
-#   storage heap._: in
+#   storage heap._: arg
 #       size: int
 #       weak: bool? = false
 #
 # @output
-#   storage heap._: out
+#   storage heap._: ret
 #       ptr: int?
 
 function heap:core/find_free_cell/
-execute if data storage heap._: out.ptr run function heap:core/allocate/do
+execute if data storage heap._: ret.ptr run function heap:core/allocate/do

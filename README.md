@@ -50,11 +50,11 @@ Attempts to allocate a memory cell with `size`.
 
 ```mcfunction
 # Allocate a raw cell with size 6.
-  data modify storage heap._: in set value {size: 6}
+  data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
 # Make the cell accessible.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
 # Store `[]` in `data` in the cell.
@@ -69,11 +69,11 @@ Deallocates the memory cell referenced by `ptr`.
 
 ```mcfunction
 # Allocate a raw cell with size 6.
-  data modify storage heap._: in set value {size: 6}
+  data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
 # Deallocate the cell.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/deallocate
 ```
 
@@ -85,25 +85,25 @@ Creates references from the cell referenced by `source` to the ref cells referen
 
 ```mcfunction
 # Allocate a raw cell `a` with size 1.
-  data modify storage heap._: in set value {size: 1}
+  data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
-  data modify storage _ a set from storage heap._: out.ptr
+  data modify storage _ a set from storage heap._: ret.ptr
 
 # Allocate a ref cell `b` with size 2.
-  data modify storage heap._: in set value {size: 2}
+  data modify storage heap._: arg set value {size: 2}
   function heap:api/allocate
-  data modify storage _ b set from storage heap._: out.ptr
+  data modify storage _ b set from storage heap._: ret.ptr
 
 # Allocate a ref cell `c` with size 3.
-  data modify storage heap._: in set value {size: 3}
+  data modify storage heap._: arg set value {size: 3}
   function heap:api/allocate
-  data modify storage _ c set from storage heap._: out.ptr
+  data modify storage _ c set from storage heap._: ret.ptr
 
 # Create references `a → b` and `a → c`.
-  data modify storage heap._: in set value {targets: [I; 0, 0]}
-  data modify storage heap._: in.source set from storage _ a
-  data modify storage heap._: in.targets[0] set from storage _ b
-  data modify storage heap._: in.targets[1] set from storage _ c
+  data modify storage heap._: arg set value {targets: [I; 0, 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
+  data modify storage heap._: arg.targets[1] set from storage _ c
   function heap:api/link
 ```
 
@@ -115,31 +115,31 @@ Removes the references from the cell referenced by `source` to the ref cells ref
 
 ```mcfunction
 # Allocate a raw cell `a` with size 1.
-  data modify storage heap._: in set value {size: 1}
+  data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
-  data modify storage _ a set from storage heap._: out.ptr
+  data modify storage _ a set from storage heap._: ret.ptr
 
 # Allocate a ref cell `b` with size 2.
-  data modify storage heap._: in set value {size: 2}
+  data modify storage heap._: arg set value {size: 2}
   function heap:api/allocate
-  data modify storage _ b set from storage heap._: out.ptr
+  data modify storage _ b set from storage heap._: ret.ptr
 
 # Allocate a ref cell `c` with size 3.
-  data modify storage heap._: in set value {size: 3}
+  data modify storage heap._: arg set value {size: 3}
   function heap:api/allocate
-  data modify storage _ c set from storage heap._: out.ptr
+  data modify storage _ c set from storage heap._: ret.ptr
 
 # Create references `a → b` and `a → c`.
-  data modify storage heap._: in set value {targets: [I; 0, 0]}
-  data modify storage heap._: in.source set from storage _ a
-  data modify storage heap._: in.targets[0] set from storage _ b
-  data modify storage heap._: in.targets[1] set from storage _ c
+  data modify storage heap._: arg set value {targets: [I; 0, 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
+  data modify storage heap._: arg.targets[1] set from storage _ c
   function heap:api/link
 
 # Remove the reference `a → b`.
-  data modify storage heap._: in set value {targets: [I; 0]}
-  data modify storage heap._: in.source set from storage _ a
-  data modify storage heap._: in.targets[0] set from storage _ b
+  data modify storage heap._: arg set value {targets: [I; 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
   function heap:api/unlink
 ```
 
@@ -151,11 +151,11 @@ Makes the cell referenced by `ptr` accessible by the target heap accessor.
 
 ```mcfunction
 # Allocate a raw cell with size 6.
-  data modify storage heap._: in set value {size: 6}
+  data modify storage heap._: arg set value {size: 6}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the target heap accessor.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
 # Store `[]` in `data` in the cell.
@@ -173,19 +173,19 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 
 ```mcfunction
 # Allocate a raw cell `a` with size 2.
-  data modify storage heap._: in set value {size: 2}
+  data modify storage heap._: arg set value {size: 2}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the target heap accessor.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
 # Allocate a raw cell `b` with size 4.
-  data modify storage heap._: in set value {size: 4}
+  data modify storage heap._: arg set value {size: 4}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the source heap accessor.
-  data modify storage heap._: in.ptr set from storage heap._: out.ptr
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/s
 
 # Store `[0, 1]` in `data` in the cell `a`.

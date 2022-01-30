@@ -5,11 +5,11 @@
 # @public
 #
 # @input
-#   storage examples._: in
+#   storage examples._: arg
 #       ptr: int
 #           The pointer to the stack.
 
-data modify storage heap._: in.ptr set from storage examples._: in.ptr
+data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
 function heap:api/deallocate
 
 say Dropped stack

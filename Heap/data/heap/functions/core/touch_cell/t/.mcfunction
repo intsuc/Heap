@@ -3,7 +3,7 @@
 # @within heap:api/touch/t
 #
 # @input
-#   storage heap._: in
+#   storage heap._: arg
 #       ptr: int
 
 function heap:core/touch_cell/-/
@@ -13,7 +13,7 @@ function heap:core/touch_cell/-/
   #declare score_holder heap:ptr
   #declare score_holder heap:cache
 
-execute store result score heap:ptr heap run data get storage heap._: in.ptr 1.0
+execute store result score heap:ptr heap run data get storage heap._: arg.ptr 1.0
 
 execute store result score heap:cache heap run data get storage heap: cache[12] 1.0
 execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/0

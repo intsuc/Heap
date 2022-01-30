@@ -5,7 +5,7 @@
 # @api
 #
 # @input
-#   storage heap._: in
+#   storage heap._: arg
 #       source: int
 #           The pointer to the source cell.
 #       targets: int_collection
