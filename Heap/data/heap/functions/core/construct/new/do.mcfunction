@@ -2,5 +2,7 @@
 #
 # @within heap:core/construct/new/
 
-data modify storage heap._: cell merge value {root: 0b, count: 1}
+# Set `count` to 1 (536870881 - 536870880).
+data modify storage heap._: cell set value {count: 536870881}
+
 function heap:core/construct/
