@@ -1,5 +1,7 @@
 #> heap:api/link
 #
+# Creates references from `source` to `targets`.
+#
 # @api
 #
 # @input

@@ -1,5 +1,7 @@
 #> heap:api/new
 #
+# Attempts to allocate a strong reference cell with `size`.
+#
 # @api
 #
 # @input

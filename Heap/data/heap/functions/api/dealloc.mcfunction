@@ -1,5 +1,7 @@
 #> heap:api/dealloc
 #
+# Deallocates the raw cell referenced by `addr`.
+#
 # @api
 #
 # @input

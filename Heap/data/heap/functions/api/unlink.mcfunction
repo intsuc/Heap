@@ -1,5 +1,7 @@
 #> heap:api/unlink
 #
+# Removes references from `source` to `targets`.
+#
 # @api
 #
 # @input

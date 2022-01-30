@@ -1,5 +1,7 @@
 #> heap:api/touch/t
 #
+# Makes the cell referenced by `addr` accessible by the reference accessor `storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._`.
+#
 # @api
 #
 # @input

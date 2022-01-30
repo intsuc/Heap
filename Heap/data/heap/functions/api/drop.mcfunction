@@ -1,5 +1,7 @@
 #> heap:api/drop
 #
+# Deallocates the reference cell referenced by `addr`.
+#
 # @api
 #
 # @input
