@@ -20,11 +20,6 @@ data modify storage heap.config: count_limit set value 6
 
 #>
 # @internal
-#declare storage heap.immutable:
-data modify storage heap.immutable: node set value [{}, {}, {}, {}, {}, {}]
-
-#>
-# @internal
 #declare storage heap.free_ring:
 data modify storage heap.free_ring: aux set value []
 data modify storage heap.free_ring: "" set value [[I; 0, 46656]]

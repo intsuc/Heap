@@ -12,7 +12,7 @@
 execute store result storage heap: cache[0] int 1.0 run scoreboard players get heap:ptr heap
 
 data remove storage heap: _[].-
-execute unless data storage heap: _ run data modify storage heap: _ set from storage heap.immutable: node
+execute unless data storage heap: _ run data modify storage heap: _ set value [{}, {}, {}, {}, {}, {}]
 
 execute if score heap:ptr heap matches 0 run data modify storage heap: _[0].- set value 0b
 execute if score heap:ptr heap matches 1 run data modify storage heap: _[1].- set value 0b
