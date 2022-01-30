@@ -1,6 +1,6 @@
-#> heap:core/construct/weak/
+#> heap:core/allocate/ref/
 #
-# @within heap:api/weak
+# @within heap:api/allocate/ref
 #
 # @input
 #   storage heap._: in
@@ -11,4 +11,4 @@
 #       ptr: int?
 
 function heap:core/find_free_cell/
-execute if data storage heap._: out.ptr run function heap:core/construct/weak/do
+execute if data storage heap._: out.ptr run function heap:core/allocate/ref/do

@@ -1,6 +1,6 @@
-#> heap:core/construct/new/
+#> heap:core/allocate/raw/
 #
-# @within heap:api/new
+# @within heap:api/allocate/raw
 #
 # @input
 #   storage heap._: in
@@ -11,4 +11,4 @@
 #       ptr: int?
 
 function heap:core/find_free_cell/
-execute if data storage heap._: out.ptr run function heap:core/construct/new/do
+execute if data storage heap._: out.ptr run function heap:core/allocate/raw/do

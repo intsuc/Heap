@@ -1,4 +1,4 @@
-#> heap:api/alloc
+#> heap:api/allocate/raw
 #
 # Attempts to allocate a raw cell with `size`.
 #
@@ -14,4 +14,4 @@
 #       ptr: int?
 #           The pointer to the allocated cell.
 
-function heap:core/construct/alloc/
+function heap:core/allocate/raw/

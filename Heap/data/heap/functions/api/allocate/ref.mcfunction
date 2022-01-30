@@ -1,6 +1,6 @@
-#> heap:api/new
+#> heap:api/allocate/ref
 #
-# Attempts to allocate a strong ref cell with `size`.
+# Attempts to allocate a ref cell with `size`.
 #
 # @api
 #
@@ -14,4 +14,4 @@
 #       ptr: int?
 #           The pointer to the allocated cell.
 
-function heap:core/construct/new/
+function heap:core/allocate/ref/

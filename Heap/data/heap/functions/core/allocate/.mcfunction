@@ -1,6 +1,6 @@
-#> heap:core/construct/
+#> heap:core/allocate/
 #
-# @within heap:core/construct/**
+# @within heap:core/allocate/**
 #
 # @input
 #   storage heap._: cell
