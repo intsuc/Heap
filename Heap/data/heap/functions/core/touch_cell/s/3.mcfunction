@@ -1,13 +1,6 @@
 #> heap:core/touch_cell/s/3
 #
 # @within heap:core/touch_cell/s/
-#
-# @input
-#   score heap:ptr heap
-
-#>
-# @private
-#declare score_holder heap:ptr
 
 execute store result storage heap: cache[9] int 1.0 run scoreboard players get heap:ptr heap
 

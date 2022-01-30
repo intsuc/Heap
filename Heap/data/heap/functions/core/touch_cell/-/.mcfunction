@@ -7,7 +7,7 @@
 #       ptr: int
 
 #>
-# @private
+# @within heap:core/touch_cell/-/**
   #declare score_holder heap:ptr
   #declare score_holder heap:cache
   #declare score_holder heap:node_size

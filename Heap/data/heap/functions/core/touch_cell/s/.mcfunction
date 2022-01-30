@@ -9,7 +9,7 @@
 function heap:core/touch_cell/-/
 
 #>
-# @private
+# @within heap:core/touch_cell/s/**
   #declare score_holder heap:ptr
   #declare score_holder heap:cache
 
