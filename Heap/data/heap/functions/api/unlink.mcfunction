@@ -1,6 +1,6 @@
 #> heap:api/unlink
 #
-# Removes the references from `source` to `targets`.
+# Removes the references from the reference cell referenced by `source` to the reference cells referenced by `targets`.
 #
 # @api
 #

@@ -26,11 +26,11 @@ Deallocates the reference cell referenced by `ptr`.
 
 ### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
 
-Creates references from `source` to `targets`.
+Creates references from the reference cell referenced by `source` to the reference cells referenced by `targets`.
 
 ### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
 
-Removes the references from `source` to `targets`.
+Removes the references from the reference cell referenced by `source` to the reference cells referenced by `targets`.
 
 ### [`heap:api/touch/s`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
 
