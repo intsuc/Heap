@@ -49,7 +49,7 @@ Attempts to allocate a memory cell with `size`.
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell with size 6.
+# Allocate a memory cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
@@ -68,7 +68,7 @@ Deallocates the memory cell referenced by `ptr`.
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell with size 6.
+# Allocate a memory cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
@@ -79,22 +79,22 @@ Deallocates the memory cell referenced by `ptr`.
 
 ### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
 
-Creates references from the cell referenced by `source` to the ref cells referenced by `targets`.
+Creates references from the cell referenced by `source` to the memory cells referenced by `targets`.
 
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell `a` with size 1.
+# Allocate a memory cell `a` with size 1.
   data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a ref cell `b` with size 2.
+# Allocate a memory cell `b` with size 2.
   data modify storage heap._: arg set value {size: 2}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a ref cell `c` with size 3.
+# Allocate a memory cell `c` with size 3.
   data modify storage heap._: arg set value {size: 3}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
@@ -109,22 +109,22 @@ Creates references from the cell referenced by `source` to the ref cells referen
 
 ### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
 
-Removes the references from the cell referenced by `source` to the ref cells referenced by `targets`.
+Removes the references from the cell referenced by `source` to the memory cells referenced by `targets`.
 
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell `a` with size 1.
+# Allocate a memory cell `a` with size 1.
   data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a ref cell `b` with size 2.
+# Allocate a memory cell `b` with size 2.
   data modify storage heap._: arg set value {size: 2}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a ref cell `c` with size 3.
+# Allocate a memory cell `c` with size 3.
   data modify storage heap._: arg set value {size: 3}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
@@ -150,7 +150,7 @@ Makes the cell referenced by `ptr` accessible by the target heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell with size 6.
+# Allocate a memory cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/alloc/raw
 
@@ -172,7 +172,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a raw cell `a` with size 2.
+# Allocate a memory cell `a` with size 2.
   data modify storage heap._: arg set value {size: 2}
   function heap:api/alloc/raw
 
@@ -180,7 +180,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
-# Allocate a raw cell `b` with size 4.
+# Allocate a memory cell `b` with size 4.
   data modify storage heap._: arg set value {size: 4}
   function heap:api/alloc/raw
 
