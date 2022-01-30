@@ -1,5 +1,8 @@
 #> heap:core/collect/schedule
 #
-# @within minecraft:load
+# @within
+#   minecraft:load
+#   heap:core/collect/schedule
 
-schedule function heap:core/collect/ 6000t
+function heap:core/collect/
+schedule function heap:core/collect/schedule 6000t
