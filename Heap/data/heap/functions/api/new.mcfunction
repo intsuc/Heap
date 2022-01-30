@@ -1,6 +1,6 @@
 #> heap:api/new
 #
-# Attempts to allocate a strong reference cell with `size`.
+# Attempts to allocate a strong ref cell with `size`.
 #
 # @api
 #

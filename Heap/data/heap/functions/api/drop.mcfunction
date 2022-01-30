@@ -1,6 +1,6 @@
 #> heap:api/drop
 #
-# Deallocates the reference cell referenced by `ptr`.
+# Deallocates the ref cell referenced by `ptr`.
 #
 # @api
 #
