@@ -23,7 +23,7 @@ data modify storage heap.config: count_limit set value 1
 #declare storage heap.free_ring:
 data modify storage heap.free_ring: aux set value []
 data modify storage heap.free_ring: "" set value [[I; 0, 46656]]
-data modify storage heap.free_ring: size set value 1
+data modify storage heap.free_ring: size set value 536870881
 
 #>
 # @internal
