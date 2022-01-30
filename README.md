@@ -12,6 +12,12 @@ A memory manager in Minecraft.
 Add [Heap]() and [_Heap]() to the `datapacks` folder.
 _Heap will automatically initialize the heap and disable itself.
 
+## Configuration
+
+| Key                                | Description                                                    | Default |
+| :--------------------------------- | :------------------------------------------------------------- | :-----: |
+| `storage heap.config: count_limit` | The limit on the number of links and unlinks counted per tick. | `1`     |
+
 ## Heap accessors
 
 To access the heap, use *heap accessors* with the following prefix:
