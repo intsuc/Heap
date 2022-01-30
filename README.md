@@ -30,7 +30,7 @@ Creates references from `source` to `targets`.
 
 ### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
 
-Removes references from `source` to `targets`.
+Removes the references from `source` to `targets`.
 
 ### [`heap:api/touch/s`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
 

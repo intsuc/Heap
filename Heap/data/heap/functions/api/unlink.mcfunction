@@ -1,6 +1,6 @@
 #> heap:api/unlink
 #
-# Removes references from `source` to `targets`.
+# Removes the references from `source` to `targets`.
 #
 # @api
 #
