@@ -10,6 +10,6 @@
 #
 # @output
 #   storage heap._: out
-#       addr: int?
+#       ptr: int?
 
 function heap:core/construct/alloc/

@@ -2,7 +2,7 @@
 #
 # @within heap:core/collect/**
 
-data modify storage heap._: in.addr set from storage heap.collector: unlink[-1]
+data modify storage heap._: in.ptr set from storage heap.collector: unlink[-1]
 data remove storage heap.collector: unlink[-1]
 function heap:core/touch/-/
 

@@ -8,7 +8,7 @@
 #
 # @output
 #   storage heap._: out
-#       addr: int?
+#       ptr: int?
 
 #>
 # @within heap:core/find/**
@@ -21,7 +21,7 @@ execute store result score heap:required heap run data get storage heap._: in.si
 execute store result score heap:free heap run data get storage heap.free_ring: size 1.0
 scoreboard players operation heap:count heap = heap:free heap
 
-data remove storage heap._: out.addr
+data remove storage heap._: out.ptr
 function heap:core/find/check
 
 scoreboard players reset heap:available heap

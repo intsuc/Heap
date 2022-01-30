@@ -4,7 +4,7 @@
 #
 # @input
 #   storage heap._: in
-#       addr: int
+#       ptr: int
 
 function heap:core/destruct/
 

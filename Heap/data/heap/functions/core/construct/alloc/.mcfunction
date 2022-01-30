@@ -8,7 +8,7 @@
 #
 # @output
 #   storage heap._: out
-#       addr: int?
+#       ptr: int?
 
 function heap:core/find/
-execute if data storage heap._: out.addr run function heap:core/construct/alloc/do
+execute if data storage heap._: out.ptr run function heap:core/construct/alloc/do

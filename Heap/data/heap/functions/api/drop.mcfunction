@@ -1,11 +1,11 @@
 #> heap:api/drop
 #
-# Deallocates the reference cell referenced by `addr`.
+# Deallocates the reference cell referenced by `ptr`.
 #
 # @api
 #
 # @input
 #   storage heap._: in
-#       addr: int
+#       ptr: int
 
 function heap:core/destruct/drop/

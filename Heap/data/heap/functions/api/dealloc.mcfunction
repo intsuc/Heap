@@ -1,11 +1,11 @@
 #> heap:api/dealloc
 #
-# Deallocates the raw cell referenced by `addr`.
+# Deallocates the raw cell referenced by `ptr`.
 #
 # @api
 #
 # @input
 #   storage heap._: in
-#       addr: int
+#       ptr: int
 
 function heap:core/destruct/dealloc/

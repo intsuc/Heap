@@ -4,7 +4,7 @@
 #
 # @input
 #   storage heap._: in
-#       addr: int
+#       ptr: int
 
 function heap:core/destruct/
 
@@ -12,4 +12,4 @@ function heap:core/destruct/
   data modify storage heap.collector: link append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.unlink[]
   data modify storage heap.collector: unlink append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.link[]
 
-data modify storage heap.collector: unlink append from storage heap._: in.addr
+data modify storage heap.collector: unlink append from storage heap._: in.ptr
