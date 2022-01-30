@@ -1,4 +1,4 @@
-#> heap:core/link/
+#> heap:core/link_cells/
 #
 # @within heap:api/link
 #

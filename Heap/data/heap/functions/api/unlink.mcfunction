@@ -9,4 +9,4 @@
 #       source: int
 #       targets: int_collection
 
-function heap:core/unlink/
+function heap:core/unlink_cells/

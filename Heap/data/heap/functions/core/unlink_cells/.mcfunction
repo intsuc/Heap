@@ -1,4 +1,4 @@
-#> heap:core/unlink/
+#> heap:core/unlink_cells/
 #
 # @within heap:api/unlink
 #
