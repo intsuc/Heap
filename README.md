@@ -14,7 +14,7 @@ _Heap will automatically initialize the heap and disable itself.
 
 ## Examples
 
-See [`Examples`](https://github.com/intsuc/Heap/blob/main/Examples).
+See [Examples](https://github.com/intsuc/Heap/blob/main/Examples).
 
 ## Configuration
 
