@@ -1,6 +1,7 @@
 #> heap:api/dealloc
 #
 # Deallocates the raw cell referenced by `ptr`.
+# Raw cells must be deallocated by this function.
 #
 # @api
 #
