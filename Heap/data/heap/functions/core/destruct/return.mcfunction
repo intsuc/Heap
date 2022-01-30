@@ -1,4 +1,4 @@
-#> heap:core/destruct/
+#> heap:core/destruct/return
 #
 # @within heap:core/destruct/**
 #

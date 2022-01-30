@@ -6,6 +6,5 @@
 #   storage heap._: in
 #       ptr: int
 
-function heap:core/destruct/
-
-data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}] set value {-: 0b}
+function heap:core/destruct/return
+function heap:core/destruct/release
