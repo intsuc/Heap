@@ -16,11 +16,11 @@ _Heap will automatically initialize the heap and disable itself.
 
 See [Examples](https://github.com/intsuc/Heap/blob/main/Examples).
 
-## Configuration
+## Types of cells
 
-| Key                                | Description                                                    | Default |
-| :--------------------------------- | :------------------------------------------------------------- | :-----: |
-| `storage heap.config: count_limit` | The limit on the number of links and unlinks counted per tick. | `1`     |
+Heap has two types of cells: *strong* and *weak*.
+Strong cells are always live and must be deallocated manually.
+Weak cells are live only if there is at least one reference from a strong cell and be deallocated automatically.
 
 ## Heap accessors
 
@@ -40,16 +40,24 @@ data get storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[
 data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data append from storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.data[]
 ```
 
+## Configuration
+
+| Key                                | Description                                                    | Default |
+| :--------------------------------- | :------------------------------------------------------------- | :-----: |
+| `storage heap.config: count_limit` | The limit on the number of links and unlinks counted per tick. | `1`     |
+
 ## APIs
 
 ### [`heap:api/allocate`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/allocate.mcfunction)
 
-Attempts to allocate a memory cell with `size`.
+Attempts to allocate a cell with `size`.
+If `weak`, the cell will be weak.
+Returns the pointer to the cell as `ptr` if the allocation succeeds.
 
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell with size 6.
+# Allocate a cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
@@ -63,12 +71,12 @@ Attempts to allocate a memory cell with `size`.
 
 ### [`heap:api/deallocate`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/deallocate.mcfunction)
 
-Deallocates the memory cell referenced by `ptr`.
+Deallocates the cell referenced by `ptr`.
 
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell with size 6.
+# Allocate a cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/allocate
 
@@ -79,22 +87,22 @@ Deallocates the memory cell referenced by `ptr`.
 
 ### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
 
-Creates references from the cell referenced by `source` to the memory cells referenced by `targets`.
+Creates references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
 
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell `a` with size 1.
+# Allocate a cell `a` with size 1.
   data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a weak memory cell `b` with size 2.
+# Allocate a weak cell `b` with size 2.
   data modify storage heap._: arg set value {size: 2, weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a weak memory cell `c` with size 3.
+# Allocate a weak cell `c` with size 3.
   data modify storage heap._: arg set value {size: 3, weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
@@ -109,22 +117,22 @@ Creates references from the cell referenced by `source` to the memory cells refe
 
 ### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
 
-Removes the references from the cell referenced by `source` to the memory cells referenced by `targets`.
+Removes the references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
 
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell `a` with size 1.
+# Allocate a cell `a` with size 1.
   data modify storage heap._: arg set value {size: 1}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a weak memory cell `b` with size 2.
+# Allocate a weak cell `b` with size 2.
   data modify storage heap._: arg set value {size: 2, weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a weak memory cell `c` with size 3.
+# Allocate a weak cell `c` with size 3.
   data modify storage heap._: arg set value {size: 3, weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
@@ -150,7 +158,7 @@ Makes the cell referenced by `ptr` accessible by the target heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell with size 6.
+# Allocate a cell with size 6.
   data modify storage heap._: arg set value {size: 6}
   function heap:api/alloc/raw
 
@@ -172,7 +180,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a memory cell `a` with size 2.
+# Allocate a cell `a` with size 2.
   data modify storage heap._: arg set value {size: 2}
   function heap:api/alloc/raw
 
@@ -180,7 +188,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
-# Allocate a memory cell `b` with size 4.
+# Allocate a cell `b` with size 4.
   data modify storage heap._: arg set value {size: 4}
   function heap:api/alloc/raw
 
@@ -207,7 +215,7 @@ The access time *is* almost optimal at 6-ary.
 
 ### Allocator
 
-### Reference counting
+### Incremental reference counting
 
 ## References
 

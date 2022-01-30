@@ -1,6 +1,8 @@
 #> heap:api/allocate
 #
-# Attempts to allocate a memory cell with `size`.
+# Attempts to allocate a cell with `size`.
+# If `weak`, the cell will be weak.
+# Returns the pointer to the cell as `ptr` if the allocation succeeds.
 #
 # @api
 #

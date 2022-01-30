@@ -4,7 +4,9 @@
 
 data modify storage heap._: cell set value {-: 0b}
 data modify storage heap._: cell._.size set from storage heap._: arg.size
-execute if data storage heap._: arg{weak: true} run data modify storage heap._: cell._.count set value 1610612640
+
+# If `weak`, set `count` to 0 (1610612640 - 1610612640).
+  execute if data storage heap._: arg{weak: true} run data modify storage heap._: cell._.count set value 1610612640
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
 function heap:core/touch_cell/-/

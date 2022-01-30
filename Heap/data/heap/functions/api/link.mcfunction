@@ -1,6 +1,6 @@
 #> heap:api/link
 #
-# Creates references from the cell referenced by `source` to the ref cells referenced by `targets`.
+# Creates references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
 #
 # @api
 #

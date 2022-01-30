@@ -12,4 +12,6 @@
 #       ptr: int?
 
 function heap:core/find_free_cell/
-execute if data storage heap._: ret.ptr run function heap:core/allocate/do
+
+# If a free cell is found, perform the allocation.
+  execute if data storage heap._: ret.ptr run function heap:core/allocate/do
