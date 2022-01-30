@@ -214,3 +214,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 ```
 
 ## Internals
+
+## References
+
+1. Jones, R.E., Hosking, A., & Moss, J.E. (2011). The Garbage Collection Handbook: The art of automatic memory management. Chapman and Hall / CRC Applied Algorithms and Data Structures Series.
