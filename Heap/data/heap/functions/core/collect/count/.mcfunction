@@ -1,6 +1,8 @@
 #> heap:core/collect/count/
 #
-# @internal
+# @within
+#   minecraft:tick
+#   heap:core/collect/
 
 #>
 # @within heap:core/collect/count/**

@@ -16,7 +16,7 @@ data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1
 #>
 # @public
 #declare storage heap.config:
-data modify storage heap.config: count_limit set value 6
+data modify storage heap.config: count_limit set value 1
 
 #>
 # @internal

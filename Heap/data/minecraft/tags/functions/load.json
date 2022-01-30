@@ -1,5 +1,5 @@
 {
     "values": [
-        "heap:core/task/schedule"
+        "heap:core/collect/schedule"
     ]
 }
