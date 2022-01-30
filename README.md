@@ -12,7 +12,23 @@ A memory manager in Minecraft.
 Add [Heap]() and [_Heap]() to the `datapacks` folder.
 _Heap will automatically initialize the heap and disable itself.
 
-## Reference accessors
+## Heap accessors
+
+To access the heap, use *heap accessors* with the following prefix:
+- `storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.`
+- `storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.`
+
+These heap accessors are called *target heap accessor* (primary) and *source heap accessor* (secondary), respectively.
+
+The target/source heap accessor is recommended to be used in the target/source position as follows:
+
+```mcfunction
+# Get `data` accessible by the target heap accessor.
+data get storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data
+
+# Append `data` accessible by the source heap accessor to `data` accessible by the target heap accessor.
+data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data append from storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.data[]
+```
 
 ## APIs
 
@@ -138,7 +154,7 @@ Removes the references from the cell referenced by `source` to the ref cells ref
 
 ### [`heap:api/touch/t`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/t.mcfunction)
 
-Makes the cell referenced by `ptr` accessible by the reference accessor `storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._`.
+Makes the cell referenced by `ptr` accessible by the target heap accessor.
 
 #### Examples
 
@@ -147,7 +163,7 @@ Makes the cell referenced by `ptr` accessible by the reference accessor `storage
   data modify storage heap._: in set value {size: 6}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the target reference accessor.
+# Make the cell accessible by the target heap accessor.
   data modify storage heap._: in.ptr set from storage heap._: out.ptr
   function heap:api/touch/t
 
@@ -160,7 +176,7 @@ Makes the cell referenced by `ptr` accessible by the reference accessor `storage
 
 ### [`heap:api/touch/s`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
 
-Makes the cell referenced by `ptr` accessible by the reference accessor `storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._`.
+Makes the cell referenced by `ptr` accessible by the source heap accessor.
 
 #### Examples
 
@@ -169,7 +185,7 @@ Makes the cell referenced by `ptr` accessible by the reference accessor `storage
   data modify storage heap._: in set value {size: 2}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the target reference accessor.
+# Make the cell accessible by the target heap accessor.
   data modify storage heap._: in.ptr set from storage heap._: out.ptr
   function heap:api/touch/t
 
@@ -177,7 +193,7 @@ Makes the cell referenced by `ptr` accessible by the reference accessor `storage
   data modify storage heap._: in set value {size: 4}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the source reference accessor.
+# Make the cell accessible by the source heap accessor.
   data modify storage heap._: in.ptr set from storage heap._: out.ptr
   function heap:api/touch/s
 

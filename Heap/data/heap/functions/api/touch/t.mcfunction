@@ -1,6 +1,6 @@
 #> heap:api/touch/t
 #
-# Makes the cell referenced by `ptr` accessible by the reference accessor `storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._`.
+# Makes the cell referenced by `ptr` accessible by the target heap accessor.
 #
 # @api
 #
