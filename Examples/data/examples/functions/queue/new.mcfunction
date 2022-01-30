@@ -27,6 +27,12 @@ data modify storage heap._: arg set value {size: 1}
 data modify storage heap._: arg.weak set from storage examples._: weak
 function heap:api/allocate
 
+data modify storage heap._: arg set value {targets: [I; 0, 0]}
+data modify storage heap._: arg.source set from storage heap._: ret.ptr
+data modify storage heap._: arg.targets[0] set from storage examples._: stacks.in
+data modify storage heap._: arg.targets[1] set from storage examples._: stacks.out
+function heap:api/link
+
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
 function heap:api/touch/t
 
