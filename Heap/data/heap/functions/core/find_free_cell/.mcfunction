@@ -1,4 +1,4 @@
-#> heap:core/find/
+#> heap:core/find_free_cell/
 #
 # @internal
 #
@@ -11,7 +11,7 @@
 #       ptr: int?
 
 #>
-# @within heap:core/find/**
+# @within heap:core/find_free_cell/**
   #declare score_holder heap:available
   #declare score_holder heap:required
   #declare score_holder heap:free
@@ -22,7 +22,7 @@ execute store result score heap:free heap run data get storage heap.free_ring: s
 scoreboard players operation heap:count heap = heap:free heap
 
 data remove storage heap._: out.ptr
-function heap:core/find/check
+function heap:core/find_free_cell/check
 
 scoreboard players reset heap:available heap
 scoreboard players reset heap:required heap

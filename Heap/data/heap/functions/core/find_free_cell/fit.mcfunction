@@ -1,6 +1,6 @@
-#> heap:core/find/fit
+#> heap:core/find_free_cell/fit
 #
-# @within heap:core/find/**
+# @within heap:core/find_free_cell/**
 
 #>
 # @private

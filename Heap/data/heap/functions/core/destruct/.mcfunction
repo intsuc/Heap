@@ -6,7 +6,7 @@
 #   storage heap._: in
 #       ptr: int
 
-function heap:core/touch/-/
+function heap:core/touch_cell/-/
 
 data modify storage heap.free_ring: "" append value [I; 0, 0]
 data modify storage heap.free_ring: ""[-1][0] set from storage heap._: in.ptr

@@ -8,4 +8,4 @@
 #   storage heap._: in
 #       ptr: int
 
-function heap:core/touch/s/
+function heap:core/touch_cell/s/

@@ -1,6 +1,6 @@
-#> heap:core/touch/t/5
+#> heap:core/touch_cell/t/5
 #
-# @within heap:core/touch/t/
+# @within heap:core/touch_cell/t/
 #
 # @input
 #   score heap:ptr heap

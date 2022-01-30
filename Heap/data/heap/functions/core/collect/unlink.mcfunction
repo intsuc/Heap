@@ -4,7 +4,7 @@
 
 data modify storage heap._: in.ptr set from storage heap.collector: unlink[-1]
 data remove storage heap.collector: unlink[-1]
-function heap:core/touch/-/
+function heap:core/touch_cell/-/
 
 # Decrement `count`.
 execute store result storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.count int 0.9999999999999999 run data get storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.count 1.0

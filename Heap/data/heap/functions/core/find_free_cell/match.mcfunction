@@ -1,6 +1,6 @@
-#> heap:core/find/match
+#> heap:core/find_free_cell/match
 #
-# @within heap:core/find/**
+# @within heap:core/find_free_cell/**
 
 data modify storage heap._: out.ptr set from storage heap.free_ring: ""[-1][0]
 

@@ -1,4 +1,4 @@
-#> heap:core/touch/t/
+#> heap:core/touch_cell/t/
 #
 # @within heap:api/touch/t
 #
@@ -6,7 +6,7 @@
 #   storage heap._: in
 #       ptr: int
 
-function heap:core/touch/-/
+function heap:core/touch_cell/-/
 
 #>
 # @private
@@ -16,22 +16,22 @@ function heap:core/touch/-/
 execute store result score heap:ptr heap run data get storage heap._: in.ptr 1.0
 
 execute store result score heap:cache heap run data get storage heap: cache[12] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/0
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/0
 
 execute store result score heap:cache heap run data get storage heap: cache[13] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/1
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/1
 
 execute store result score heap:cache heap run data get storage heap: cache[14] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/2
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/2
 
 execute store result score heap:cache heap run data get storage heap: cache[15] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/3
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/3
 
 execute store result score heap:cache heap run data get storage heap: cache[16] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/4
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/4
 
 execute store result score heap:cache heap run data get storage heap: cache[17] 1.0
-execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch/t/5
+execute unless score heap:ptr heap = heap:cache heap run function heap:core/touch_cell/t/5
 
 scoreboard players reset heap:ptr heap
 scoreboard players reset heap:cache heap
