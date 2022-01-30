@@ -107,17 +107,17 @@ Removes the references from the cell referenced by `source` to the ref cells ref
 #### Examples
 
 ```mcfunction
-# Allocate a strong ref cell `a` with size 1.
+# Allocate a raw cell `a` with size 1.
   data modify storage heap._: in set value {size: 1}
   function heap:api/allocate/raw
   data modify storage _ a set from storage heap._: out.ptr
 
-# Allocate a weak ref cell `b` with size 2.
+# Allocate a ref cell `b` with size 2.
   data modify storage heap._: in set value {size: 2}
   function heap:api/allocate/ref
   data modify storage _ b set from storage heap._: out.ptr
 
-# Allocate a weak ref cell `c` with size 3.
+# Allocate a ref cell `c` with size 3.
   data modify storage heap._: in set value {size: 3}
   function heap:api/allocate/ref
   data modify storage _ c set from storage heap._: out.ptr
