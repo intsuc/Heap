@@ -7,5 +7,6 @@
 # @input
 #   storage heap._: in
 #       ptr: int
+#           The pointer to the cell to be touched.
 
 function heap:core/touch_cell/t/
