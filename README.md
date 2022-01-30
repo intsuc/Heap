@@ -12,6 +12,10 @@ A memory manager in Minecraft.
 Add [Heap]() and [_Heap]() to the `datapacks` folder.
 _Heap will automatically initialize the heap and disable itself.
 
+## Examples
+
+See [`Examples`](https://github.com/intsuc/Heap/blob/main/Examples).
+
 ## Configuration
 
 | Key                                | Description                                                    | Default |
