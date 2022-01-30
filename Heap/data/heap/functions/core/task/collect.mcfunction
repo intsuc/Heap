@@ -1,4 +1,4 @@
-#> heap:core/collect/
+#> heap:core/task/collect
 #
 # Performs full garbage collection.
 #
@@ -6,7 +6,7 @@
 
 data modify storage heap._: count_limit set from storage heap.config: count_limit
 data modify storage heap.config: count_limit set value 2147483647
-function heap:core/collect/count/
+function heap:core/task/count/
 data modify storage heap.config: count_limit set from storage heap._: count_limit
 
 # Sweep all the cells with `count` of 0 (1610612640 - 1610612640).

@@ -42,9 +42,10 @@ data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]
 
 ## Configuration
 
-| Key                                | Description                                                    | Default |
-| :--------------------------------- | :------------------------------------------------------------- | :-----: |
-| `storage heap.config: count_limit` | The limit on the number of links and unlinks counted per tick. | `1`     |
+| Key                                 | Description                                                    | Default |
+| :---------------------------------- | :------------------------------------------------------------- | :-----: |
+| `storage heap.config: count_limit`  | The limit on the number of links and unlinks counted per tick. | `1`     |
+| `storage heap.config: defrag_limit` | The limit on the number of free cells defragmented per tick.   | `1`     |
 
 ## APIs
 

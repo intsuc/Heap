@@ -21,6 +21,7 @@
 # @public
 #declare storage heap.config:
   data modify storage heap.config: count_limit set value 1
+  data modify storage heap.config: defrag_limit set value 1
 
 #>
 # @internal

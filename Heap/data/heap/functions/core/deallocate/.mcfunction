@@ -14,8 +14,7 @@ function heap:core/touch_cell/-/
   data modify storage heap.free_ring: ""[-1][0] set from storage heap._: arg.ptr
   data modify storage heap.free_ring: ""[-1][1] set from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.size
 
-# Increment `size`.
-  execute store result storage heap.free_ring: size int 1.0000000009313226 run data get storage heap.free_ring: size 1.0
+function heap:core/free_ring/increment
 
 # Cancel out `link` and `unlink`.
   data modify storage heap.collector: link append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.unlink[]
