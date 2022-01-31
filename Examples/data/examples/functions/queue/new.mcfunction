@@ -23,7 +23,7 @@ data modify storage examples._: arg set value {weak: true}
 function examples:stack/new
 data modify storage examples._: stacks.out set from storage examples._: ret.ptr
 
-data modify storage heap._: arg set value {size: 1}
+data modify storage heap._: arg set value {}
 data modify storage heap._: arg.weak set from storage examples._: weak
 function heap:api/allocate
 

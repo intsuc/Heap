@@ -13,7 +13,7 @@
 #       ptr: int?
 #           The pointer to the stack.
 
-data modify storage heap._: arg set value {size: 1}
+data modify storage heap._: arg set value {}
 data modify storage heap._: arg.weak set from storage examples._: arg.weak
 function heap:api/allocate
 

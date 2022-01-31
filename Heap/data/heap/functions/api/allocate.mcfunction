@@ -8,9 +8,9 @@
 #
 # @input
 #   storage heap._: arg
-#       size: int
+#       size: int = 1
 #           The size of the cell to be allocated.
-#       weak: bool?
+#       weak: bool? = false
 #
 # @output
 #   storage heap._: ret

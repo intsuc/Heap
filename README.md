@@ -58,8 +58,8 @@ Returns the pointer to the cell as `ptr` if the allocation succeeds.
 #### Examples
 
 ```mcfunction
-# Allocate a cell with size 6.
-  data modify storage heap._: arg set value {size: 6}
+# Allocate a cell with size 1.
+  data modify storage heap._: arg set value {}
   function heap:api/allocate
 
 # Make the cell accessible.
@@ -68,6 +68,14 @@ Returns the pointer to the cell as `ptr` if the allocation succeeds.
 
 # Store `[]` in `data` in the cell.
   data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data set value []
+
+# Allocate a cell with size 2.
+  data modify storage heap._: arg set value {size: 2}
+  function heap:api/allocate
+
+# Allocate a weak cell with size 3.
+  data modify storage heap._: arg set value {size: 3, weak: true}
+  function heap:api/allocate
 ```
 
 ### [`heap:api/deallocate`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/deallocate.mcfunction)
@@ -77,8 +85,8 @@ Deallocates the cell referenced by `ptr`.
 #### Examples
 
 ```mcfunction
-# Allocate a cell with size 6.
-  data modify storage heap._: arg set value {size: 6}
+# Allocate a cell.
+  data modify storage heap._: arg set value {}
   function heap:api/allocate
 
 # Deallocate the cell.
@@ -93,18 +101,18 @@ Creates references from the strong cell referenced by `source` to the weak cells
 #### Examples
 
 ```mcfunction
-# Allocate a cell `a` with size 1.
-  data modify storage heap._: arg set value {size: 1}
+# Allocate a cell `a`.
+  data modify storage heap._: arg set value {}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a weak cell `b` with size 2.
-  data modify storage heap._: arg set value {size: 2, weak: true}
+# Allocate a weak cell `b`.
+  data modify storage heap._: arg set value {weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a weak cell `c` with size 3.
-  data modify storage heap._: arg set value {size: 3, weak: true}
+# Allocate a weak cell `c`.
+  data modify storage heap._: arg set value {weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
 
@@ -123,18 +131,18 @@ Removes the references from the strong cell referenced by `source` to the weak c
 #### Examples
 
 ```mcfunction
-# Allocate a cell `a` with size 1.
-  data modify storage heap._: arg set value {size: 1}
+# Allocate a cell `a`.
+  data modify storage heap._: arg set value {}
   function heap:api/allocate
   data modify storage _ a set from storage heap._: ret.ptr
 
-# Allocate a weak cell `b` with size 2.
-  data modify storage heap._: arg set value {size: 2, weak: true}
+# Allocate a weak cell `b`.
+  data modify storage heap._: arg set value {weak: true}
   function heap:api/allocate
   data modify storage _ b set from storage heap._: ret.ptr
 
-# Allocate a weak cell `c` with size 3.
-  data modify storage heap._: arg set value {size: 3, weak: true}
+# Allocate a weak cell `c`.
+  data modify storage heap._: arg set value {weak: true}
   function heap:api/allocate
   data modify storage _ c set from storage heap._: ret.ptr
 
@@ -159,8 +167,8 @@ Makes the cell referenced by `ptr` accessible by the target heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a cell with size 6.
-  data modify storage heap._: arg set value {size: 6}
+# Allocate a cell.
+  data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the target heap accessor.
@@ -181,16 +189,16 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 #### Examples
 
 ```mcfunction
-# Allocate a cell `a` with size 2.
-  data modify storage heap._: arg set value {size: 2}
+# Allocate a cell `a`.
+  data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the target heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
   function heap:api/touch/t
 
-# Allocate a cell `b` with size 4.
-  data modify storage heap._: arg set value {size: 4}
+# Allocate a cell `b`.
+  data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
 # Make the cell accessible by the source heap accessor.
