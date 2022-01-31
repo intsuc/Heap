@@ -4,8 +4,9 @@ A memory manager in Minecraft.
 
 ## Features
 
+- [x] Random access memory accessible in Ω(logN)-O(log²N) time
 - [x] Dynamic memory allocation
-- [x] Incremental reference counting
+- [x] Incremental garbage collection
 
 ## Installation
 
@@ -219,8 +220,7 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
 
 ### Data structure
 
-Heap uses 6-ary 6-layer *filter-mapped trie* to achieve random access in Ω(logN)-O(log²N) time.
-The access time *is* almost optimal at 6-ary.
+Heap uses *filter-mapped trie* to achieve random access in Ω(logN)-O(log²N) time.
 
 ### Allocator
 
