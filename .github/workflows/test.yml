@@ -21,9 +21,11 @@ jobs:
           version: "1.18.1"
       - id: minecraft
         run: |
-          mkdir -p world/datapacks/
+          mkdir -p world/datapacks/_Heap/
           cp -r _Heap/* world/datapacks/_Heap/
+          mkdir -p world/datapacks/Heap/
           cp -r Heap/* world/datapacks/Heap/
+          mkdir -p world/datapacks/Tests/
           cp -r Tests/* world/datapacks/Tests/
 
           echo "eula=true" > eula.txt
