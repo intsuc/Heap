@@ -1,0 +1,13 @@
+{
+    "values": [
+        "heap:tests/allocate_success/",
+        "heap:tests/allocate_default_size_1/",
+        "heap:tests/allocate_default_strong/",
+        "heap:tests/allocate_weak_count/",
+        "heap:tests/touch_1/",
+        "heap:tests/touch_2/",
+        "heap:tests/touch_1_unaffected_by_touch_2/",
+        "heap:tests/touch_2_unaffected_by_touch_1/",
+        "heap:tests/touch_1_and_2/"
+    ]
+}

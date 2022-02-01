@@ -1,5 +1,5 @@
 {
     "values": [
-        "#tests:run"
+        "#heap:run"
     ]
 }

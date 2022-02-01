@@ -1,0 +1,7 @@
+{
+    "values": [
+        "heap:init",
+        "#heap:tests",
+        "heap:exit"
+    ]
+}
