@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "A memory manager in Minecraft",
+        "description": "A memory manager",
         "pack_format": 8
     }
 }
