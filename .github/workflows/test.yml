@@ -21,6 +21,7 @@ jobs:
           version: "1.18.1"
       - id: minecraft
         run: |
+          mkdir -p world/datapacks/
           cp -r _Heap/* world/datapacks/_Heap/
           cp -r Heap/* world/datapacks/Heap/
           cp -r Tests/* world/datapacks/Tests/
