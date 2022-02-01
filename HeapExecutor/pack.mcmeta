@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "A time profiler for Heap",
+        "description": "An executor for Heap",
         "pack_format": 8
     },
     "function_permission_level": 3
