@@ -85,7 +85,7 @@ Deallocates the cell referenced by `ptr`.
 
 ### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
 
-Creates references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
+Creates references from the cell referenced by `source` to the cells referenced by `targets`.
 
 #### Examples
 
@@ -115,7 +115,7 @@ Creates references from the strong cell referenced by `source` to the weak cells
 
 ### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
 
-Removes the references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
+Removes the references from the cell referenced by `source` to the cells referenced by `targets`.
 
 #### Examples
 
@@ -149,7 +149,7 @@ Removes the references from the strong cell referenced by `source` to the weak c
   function heap:api/unlink
 ```
 
-### [`heap:api/touch/1`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/t.mcfunction)
+### [`heap:api/touch/1`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/1.mcfunction)
 
 Makes the cell referenced by `ptr` accessible by the primary heap accessor.
 
@@ -171,7 +171,7 @@ Makes the cell referenced by `ptr` accessible by the primary heap accessor.
   data get storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data
 ```
 
-### [`heap:api/touch/2`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
+### [`heap:api/touch/2`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/2.mcfunction)
 
 Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 
@@ -202,6 +202,22 @@ Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 
 # Append `data` in the cell `b` to `data` in the cell `a`.
   data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.data[]
+```
+
+### [`heap:api/upgrade`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/upgrade.mcfunction)
+
+Upgrades the weak cell referenced by `ptr` to a strong cell.
+
+#### Examples
+
+```mcfunction
+# Allocate a weak cell.
+  data modify storage heap._: arg set value {weak: true}
+  function heap:api/allocate
+
+# Upgrade the cell.
+  data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
+  function heap:api/upgrade
 ```
 
 ## Internals
