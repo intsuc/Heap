@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           (cp LICENSE Heap/LICENSE && cd Heap && zip -r ../Heap.zip .)
-          (cp LICENSE Heap/LICENSE && cd _Heap && zip -r ../_Heap.zip .)
+          (cp LICENSE _Heap/LICENSE && cd _Heap && zip -r ../_Heap.zip .)
       - uses: softprops/action-gh-release@v1
         with:
           files: |
