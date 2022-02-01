@@ -26,8 +26,8 @@ Weak cells are live only if there is at least one reference from a strong cell a
 ## Heap accessors
 
 To access the heap, use *heap accessors* with the following prefix:
-- Primary head accessor: `storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.`
-- Secondary head accessor: `storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.`
+- Primary heap accessor: `storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.`
+- Secondary heap accessor: `storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.`
 
 ## Configuration
 
@@ -208,7 +208,7 @@ Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 
 ### Data structure
 
-Heap uses *filter-mapped trie* to achieve random access in Ω(logN)-O(log²N) time.
+Heap uses *list-mapped trie* to achieve random access in Ω(logN)-O(log²N) time.
 
 ### Allocator
 
