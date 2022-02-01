@@ -17,7 +17,7 @@
 #           The pointer to the out-stack of the queue.
 
 data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
-function heap:api/touch/1
+function heap:api/touch/
 
 data modify storage examples._: stacks set from storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.stacks
 

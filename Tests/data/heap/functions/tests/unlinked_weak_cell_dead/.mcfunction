@@ -22,6 +22,6 @@ function heap:api/unlink
 function heap:api/collect
 
 data modify storage heap._: arg.ptr set from storage heap._: temp.targets[0]
-function heap:api/touch/1
+function heap:api/touch/
 
 execute if data storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._ run function heap:fail

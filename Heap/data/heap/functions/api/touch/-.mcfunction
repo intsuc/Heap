@@ -1,4 +1,4 @@
-#> heap:api/touch/2
+#> heap:api/touch/-
 #
 # Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 #

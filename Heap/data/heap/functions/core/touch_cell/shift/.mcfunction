@@ -1,6 +1,6 @@
 #> heap:core/touch_cell/shift/
 #
-# @within heap:api/touch/1
+# @within heap:api/touch/
 #
 # @input
 #   storage heap._: arg

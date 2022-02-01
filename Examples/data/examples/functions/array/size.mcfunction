@@ -15,6 +15,6 @@
 #           The size of the array.
 
 data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
-function heap:api/touch/1
+function heap:api/touch/
 
 data modify storage examples._: ret.size set from storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.size

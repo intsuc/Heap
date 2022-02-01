@@ -34,7 +34,7 @@ data modify storage heap._: arg.targets[1] set from storage examples._: stacks.o
 function heap:api/link
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-function heap:api/touch/1
+function heap:api/touch/
 
 data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.stacks set from storage examples._: stacks
 
