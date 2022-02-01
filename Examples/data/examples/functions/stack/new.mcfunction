@@ -18,8 +18,8 @@ data modify storage heap._: arg.weak set from storage examples._: arg.weak
 function heap:api/allocate
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-function heap:api/touch/t
+function heap:api/touch/1
 
-data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.elements set value []
+data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.elements set value []
 
 data modify storage examples._: ret.ptr set from storage heap._: ret.ptr

@@ -1,22 +1,17 @@
 {
-    "path": {
+    "primary_path": {
         "scope": "mcfunction",
-        "prefix": "_",
-        "body": "storage heap: _[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._[{$1: 0b}]._.$2"
+        "prefix": "_1",
+        "body": "storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.$1"
     },
-    "path_-": {
+    "secondary_path": {
         "scope": "mcfunction",
-        "prefix": "_-",
+        "prefix": "_2",
         "body": "storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.$1"
     },
-    "path_s": {
+    "internal_path": {
         "scope": "mcfunction",
-        "prefix": "_s",
-        "body": "storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.$1"
-    },
-    "path_t": {
-        "scope": "mcfunction",
-        "prefix": "_t",
-        "body": "storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.$1"
+        "prefix": "_i",
+        "body": "storage heap: _[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._.$1"
     }
 }

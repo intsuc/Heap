@@ -12,7 +12,7 @@
 #           The element to be enqueued.
 
 data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
-function heap:api/touch/t
+function heap:api/touch/1
 
-data modify storage examples._: arg.ptr set from storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.stacks.in
+data modify storage examples._: arg.ptr set from storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.stacks.in
 function examples:stack/push

@@ -12,6 +12,6 @@
 #           The element to be pushed.
 
 data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
-function heap:api/touch/t
+function heap:api/touch/1
 
-data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.elements append from storage examples._: arg.element
+data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.elements append from storage examples._: arg.element

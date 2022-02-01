@@ -14,6 +14,6 @@
 #       is_empty: bool
 
 data modify storage heap._: arg.ptr set from storage examples._: arg.ptr
-function heap:api/touch/t
+function heap:api/touch/1
 
-execute store success storage examples._: ret.is_empty byte 1.0 unless data storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.elements[0]
+execute store success storage examples._: ret.is_empty byte 1.0 unless data storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.elements[0]

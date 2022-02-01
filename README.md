@@ -26,20 +26,8 @@ Weak cells are live only if there is at least one reference from a strong cell a
 ## Heap accessors
 
 To access the heap, use *heap accessors* with the following prefix:
-- `storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.`
-- `storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.`
-
-These heap accessors are called *target heap accessor* (primary) and *source heap accessor* (secondary), respectively.
-
-The target/source heap accessor is recommended to be used in the target/source position as follows:
-
-```mcfunction
-# Get `data` accessible by the target heap accessor.
-data get storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data
-
-# Append `data` accessible by the source heap accessor to `data` accessible by the target heap accessor.
-data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data append from storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.data[]
-```
+- Primary head accessor: `storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.`
+- Secondary head accessor: `storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.`
 
 ## Configuration
 
@@ -65,10 +53,10 @@ Returns the pointer to the cell as `ptr` if the allocation succeeds.
 
 # Make the cell accessible.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-  function heap:api/touch/t
+  function heap:api/touch/1
 
 # Store `[]` in `data` in the cell.
-  data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data set value []
+  data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data set value []
 
 # Allocate a cell with size 2.
   data modify storage heap._: arg set value {size: 2}
@@ -161,9 +149,9 @@ Removes the references from the strong cell referenced by `source` to the weak c
   function heap:api/unlink
 ```
 
-### [`heap:api/touch/t`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/t.mcfunction)
+### [`heap:api/touch/1`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/t.mcfunction)
 
-Makes the cell referenced by `ptr` accessible by the target heap accessor.
+Makes the cell referenced by `ptr` accessible by the primary heap accessor.
 
 #### Examples
 
@@ -172,20 +160,20 @@ Makes the cell referenced by `ptr` accessible by the target heap accessor.
   data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the target heap accessor.
+# Make the cell accessible by the primary heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-  function heap:api/touch/t
+  function heap:api/touch/1
 
 # Store `[]` in `data` in the cell.
-  data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data set value []
+  data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data set value []
 
 # Get `data` in the cell.
-  data get storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data
+  data get storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data
 ```
 
-### [`heap:api/touch/s`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
+### [`heap:api/touch/2`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/s.mcfunction)
 
-Makes the cell referenced by `ptr` accessible by the source heap accessor.
+Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 
 #### Examples
 
@@ -194,26 +182,26 @@ Makes the cell referenced by `ptr` accessible by the source heap accessor.
   data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the target heap accessor.
+# Make the cell accessible by the primary heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-  function heap:api/touch/t
+  function heap:api/touch/1
 
 # Allocate a cell `b`.
   data modify storage heap._: arg set value {}
   function heap:api/alloc/raw
 
-# Make the cell accessible by the source heap accessor.
+# Make the cell accessible by the secondary heap accessor.
   data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-  function heap:api/touch/s
+  function heap:api/touch/2
 
 # Store `[0, 1]` in `data` in the cell `a`.
-  data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data set value [0, 1]
+  data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data set value [0, 1]
 
 # Store `[2, 3]` in `data` in the cell `b`.
-  data modify storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.data set value [2, 3]
+  data modify storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.data set value [2, 3]
 
 # Append `data` in the cell `b` to `data` in the cell `a`.
-  data modify storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._.data append from storage heap: _[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._[{s: 0b}]._.data[]
+  data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.data[]
 ```
 
 ## Internals

@@ -10,12 +10,20 @@
 #>
 # @public
 #declare storage heap:
-  # The cache of the last accessed offset.    | Cache of -            | Cache of s            | Cache of t            |
+  # The cache of the last accessed offset.    | Internal              | Primary               | Secondary             |
   data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 
 #>
 # @public
 #declare storage heap._:
+
+#>
+# @internal
+#declare storage heap.immutable:
+  data modify storage heap.immutable: nodes2 set value [{+: 0b}, {+: 0b}]
+  data modify storage heap.immutable: nodes3 set value [{+: 0b}, {+: 0b}, {+: 0b}]
+  data modify storage heap.immutable: nodes4 set value [{+: 0b}, {+: 0b}, {+: 0b}, {+: 0b}]
+  data modify storage heap.immutable: nodes5 set value [{+: 0b}, {+: 0b}, {+: 0b}, {+: 0b}, {+: 0b}]
 
 #>
 # @public
