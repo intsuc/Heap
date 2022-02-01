@@ -6,7 +6,7 @@ A memory manager in Minecraft.
 
 - [x] Random access memory accessible in Ω(logN)-O(log²N) time
 - [x] Dynamic memory allocation
-- [x] Incremental garbage collection
+- [x] Incremental garbage collection by reference counting
 
 ## Installation
 
@@ -222,13 +222,17 @@ Upgrades the weak cell referenced by `ptr` to a strong cell.
 
 ## Internals
 
-### Data structure
+### Memory
 
 Heap uses *list-mapped trie* to achieve random access in Ω(logN)-O(log²N) time.
 
 ### Allocator
 
-### Incremental reference counting
+Heap uses *ring queue* to keep track of free cells.
+
+### Garbage collector
+
+Heap uses *incremental reference counting* to automatically deallocate unreachable weak cells.
 
 ## References
 
