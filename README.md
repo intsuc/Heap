@@ -83,72 +83,6 @@ Deallocates the cell referenced by `ptr`.
   function heap:api/deallocate
 ```
 
-### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
-
-Creates references from the cell referenced by `source` to the cells referenced by `targets`.
-
-#### Examples
-
-```mcfunction
-# Allocate a cell `a`.
-  data modify storage heap._: arg set value {}
-  function heap:api/allocate
-  data modify storage _ a set from storage heap._: ret.ptr
-
-# Allocate a weak cell `b`.
-  data modify storage heap._: arg set value {weak: true}
-  function heap:api/allocate
-  data modify storage _ b set from storage heap._: ret.ptr
-
-# Allocate a weak cell `c`.
-  data modify storage heap._: arg set value {weak: true}
-  function heap:api/allocate
-  data modify storage _ c set from storage heap._: ret.ptr
-
-# Create references `a → b` and `a → c`.
-  data modify storage heap._: arg set value {targets: [I; 0, 0]}
-  data modify storage heap._: arg.source set from storage _ a
-  data modify storage heap._: arg.targets[0] set from storage _ b
-  data modify storage heap._: arg.targets[1] set from storage _ c
-  function heap:api/link
-```
-
-### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
-
-Removes the references from the cell referenced by `source` to the cells referenced by `targets`.
-
-#### Examples
-
-```mcfunction
-# Allocate a cell `a`.
-  data modify storage heap._: arg set value {}
-  function heap:api/allocate
-  data modify storage _ a set from storage heap._: ret.ptr
-
-# Allocate a weak cell `b`.
-  data modify storage heap._: arg set value {weak: true}
-  function heap:api/allocate
-  data modify storage _ b set from storage heap._: ret.ptr
-
-# Allocate a weak cell `c`.
-  data modify storage heap._: arg set value {weak: true}
-  function heap:api/allocate
-  data modify storage _ c set from storage heap._: ret.ptr
-
-# Create references `a → b` and `a → c`.
-  data modify storage heap._: arg set value {targets: [I; 0, 0]}
-  data modify storage heap._: arg.source set from storage _ a
-  data modify storage heap._: arg.targets[0] set from storage _ b
-  data modify storage heap._: arg.targets[1] set from storage _ c
-  function heap:api/link
-
-# Remove the reference `a → b`.
-  data modify storage heap._: arg set value {targets: [I; 0]}
-  data modify storage heap._: arg.source set from storage _ a
-  data modify storage heap._: arg.targets[0] set from storage _ b
-  function heap:api/unlink
-```
-
 ### [`heap:api/touch/1`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/touch/1.mcfunction)
 
 Makes the cell referenced by `ptr` accessible by the primary heap accessor.
@@ -202,6 +136,72 @@ Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
 
 # Append `data` in the cell `b` to `data` in the cell `a`.
   data modify storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._.data append from storage heap: _[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._[{-: 0b}]._.data[]
+```
+
+### [`heap:api/link`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/link.mcfunction)
+
+Creates references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
+
+#### Examples
+
+```mcfunction
+# Allocate a cell `a`.
+  data modify storage heap._: arg set value {}
+  function heap:api/allocate
+  data modify storage _ a set from storage heap._: ret.ptr
+
+# Allocate a weak cell `b`.
+  data modify storage heap._: arg set value {weak: true}
+  function heap:api/allocate
+  data modify storage _ b set from storage heap._: ret.ptr
+
+# Allocate a weak cell `c`.
+  data modify storage heap._: arg set value {weak: true}
+  function heap:api/allocate
+  data modify storage _ c set from storage heap._: ret.ptr
+
+# Create references `a → b` and `a → c`.
+  data modify storage heap._: arg set value {targets: [I; 0, 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
+  data modify storage heap._: arg.targets[1] set from storage _ c
+  function heap:api/link
+```
+
+### [`heap:api/unlink`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/unlink.mcfunction)
+
+Removes the references from the strong cell referenced by `source` to the weak cells referenced by `targets`.
+
+#### Examples
+
+```mcfunction
+# Allocate a cell `a`.
+  data modify storage heap._: arg set value {}
+  function heap:api/allocate
+  data modify storage _ a set from storage heap._: ret.ptr
+
+# Allocate a weak cell `b`.
+  data modify storage heap._: arg set value {weak: true}
+  function heap:api/allocate
+  data modify storage _ b set from storage heap._: ret.ptr
+
+# Allocate a weak cell `c`.
+  data modify storage heap._: arg set value {weak: true}
+  function heap:api/allocate
+  data modify storage _ c set from storage heap._: ret.ptr
+
+# Create references `a → b` and `a → c`.
+  data modify storage heap._: arg set value {targets: [I; 0, 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
+  data modify storage heap._: arg.targets[1] set from storage _ c
+  function heap:api/link
+
+# Remove the reference `a → b`.
+  data modify storage heap._: arg set value {targets: [I; 0]}
+  data modify storage heap._: arg.source set from storage _ a
+  data modify storage heap._: arg.targets[0] set from storage _ b
+  function heap:api/unlink
 ```
 
 ### [`heap:api/upgrade`](https://github.com/intsuc/Heap/blob/main/Heap/data/heap/functions/api/upgrade.mcfunction)

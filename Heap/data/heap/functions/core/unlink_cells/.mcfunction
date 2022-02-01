@@ -9,6 +9,6 @@
 
 data modify storage heap._: arg.ptr set from storage heap._: arg.source
 function heap:core/touch_cell/internal/
-data modify storage heap: _[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._._unlink append from storage heap._: arg.targets[]
 
-data modify storage heap.collector: unlink append from storage heap._: arg.targets[]
+# If the `source` is strong, disconnect it to the `targets`.
+  execute unless data storage heap: _[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._._count run function heap:core/unlink_cells/do
