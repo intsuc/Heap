@@ -2,5 +2,6 @@
     "pack": {
         "description": "A memory manager",
         "pack_format": 8
-    }
+    },
+    "function_permission_level": 2
 }

@@ -2,5 +2,6 @@
     "pack": {
         "description": "Tests",
         "pack_format": 8
-    }
+    },
+    "function_permission_level": 4
 }
