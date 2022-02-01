@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "An executor for Heap",
+        "description": "A task executor for Heap",
         "pack_format": 8
     },
     "function_permission_level": 3
