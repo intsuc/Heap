@@ -1,0 +1,7 @@
+{
+    "values": [
+        "tests:init",
+        "#tests:tests",
+        "tests:exit"
+    ]
+}

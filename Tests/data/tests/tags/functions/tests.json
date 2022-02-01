@@ -1,0 +1,8 @@
+{
+    "values": [
+        "tests:tests/allocate_success/",
+        "tests:tests/allocate_default_size_1/",
+        "tests:tests/allocate_default_strong/",
+        "tests:tests/allocate_weak_count/"
+    ]
+}

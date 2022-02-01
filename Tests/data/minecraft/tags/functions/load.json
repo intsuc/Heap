@@ -1,6 +1,5 @@
 {
     "values": [
-        "tests:init",
-        "tests:exit"
+        "#tests:run"
     ]
 }
