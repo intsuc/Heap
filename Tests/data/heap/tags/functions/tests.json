@@ -7,7 +7,6 @@
         "heap:tests/collect_dead_weak_cell/",
         "heap:tests/deallocate/",
         "heap:tests/deallocate_free_ring_incremented/",
-        "heap:tests/immediate_defrag/",
         "heap:tests/linked_weak_cell_live/",
         "heap:tests/touch_1/",
         "heap:tests/touch_1_and_2/",
