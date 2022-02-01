@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+        (cd Heap && zip -r ../Heap.zip .)
+        (cd _Heap && zip -r ../_Heap.zip .)
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            Heap.zip
+            _Heap.zip
