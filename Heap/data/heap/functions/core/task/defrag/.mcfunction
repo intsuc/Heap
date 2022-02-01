@@ -1,6 +1,8 @@
 #> heap:core/task/defrag/
 #
-# @within minecraft:tick
+# @within
+#   minecraft:tick
+#   heap:tests/**
 
 function heap:core/free_ring/check
 
