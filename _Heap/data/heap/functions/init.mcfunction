@@ -5,7 +5,7 @@
 # @within minecraft:tick
 
 # Disable this datapack to reduce footprint and to avoid accidental reinitialization.
-  datapack disable "file/_Heap"
+  datapack disable "file/_Heap.zip"
 
 #>
 # @public
