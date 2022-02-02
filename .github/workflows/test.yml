@@ -25,6 +25,10 @@ jobs:
           cp -r _Heap/* world/datapacks/_Heap/
           mkdir -p world/datapacks/Heap/
           cp -r Heap/* world/datapacks/Heap/
+          mkdir -p world/datapacks/HeapCollector/
+          cp -r HeapCollector/* world/datapacks/HeapCollector/
+          mkdir -p world/datapacks/HeapExecutor/
+          cp -r HeapExecutor/* world/datapacks/HeapExecutor/
           mkdir -p world/datapacks/Tests/
           cp -r Tests/* world/datapacks/Tests/
 

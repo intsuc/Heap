@@ -3,5 +3,6 @@
         "description": "A garbage collector for Heap",
         "pack_format": 8
     },
+    "version": "1.1.0",
     "function_permission_level": 2
 }

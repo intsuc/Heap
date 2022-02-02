@@ -12,8 +12,12 @@ jobs:
       - run: |
           (cp LICENSE _Heap/LICENSE && cd _Heap && zip -r ../_Heap.zip .)
           (cp LICENSE Heap/LICENSE && cd Heap && zip -r ../Heap.zip .)
+          (cp LICENSE HeapCollector/LICENSE && cd HeapCollector && zip -r ../HeapCollector.zip .)
+          (cp LICENSE HeapExecutor/LICENSE && cd HeapExecutor && zip -r ../HeapExecutor.zip .)
       - uses: softprops/action-gh-release@v1
         with:
           files: |
             _Heap.zip
             Heap.zip
+            HeapCollector.zip
+            HeapExecutor.zip
