@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          (cp LICENSE _Heap/LICENSE && cd _Heap && zip -r ../_Heap-${{ github.ref_name }}.zip .)
-          (cp LICENSE Heap/LICENSE && cd Heap && zip -r ../Heap-${{ github.ref_name }}.zip .)
+          (cp LICENSE _Heap/LICENSE && cd _Heap && zip -r ../_Heap.zip .)
+          (cp LICENSE Heap/LICENSE && cd Heap && zip -r ../Heap.zip .)
       - uses: softprops/action-gh-release@v1
         with:
           files: |
-            _Heap-${{ github.ref_name }}.zip
-            Heap-${{ github.ref_name }}.zip
+            _Heap.zip
+            Heap.zip
