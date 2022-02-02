@@ -1,8 +1,8 @@
-#> heap:profile/
+#> heap:executor/profile/
 #
 # @within
 #   minecraft:load
-#   heap:profile/
+#   heap:executor/profile/
 
 #>
 # @internal
@@ -31,4 +31,4 @@ scoreboard players reset heap:average_tick_time heap
 scoreboard players reset heap:average_tick_time_old heap
 scoreboard players reset heap:credit heap
 
-schedule function heap:profile/ 2t
+schedule function heap:executor/profile/ 2t
