@@ -24,7 +24,7 @@ execute store result score heap:average_tick_time heap run data get storage heap
 execute store result storage heap.executor: average_tick_time int 1.0 run scoreboard players operation heap:average_tick_time heap += heap:average_tick_time_old heap
 
 execute store result score heap:credit heap run data get storage heap.executor: credit 1.0
-execute if score heap:average_tick_time heap matches 35.. store result storage heap.executor: credit int 1.0 run scoreboard players add heap:credit heap 1
+execute if score heap:average_tick_time heap matches 35.. if data storage heap.executor: {credit_out: true} store result storage heap.executor: credit int 1.0 run scoreboard players add heap:credit heap 1
 execute if score heap:average_tick_time heap matches ..34 store result storage heap.executor: credit int 1.0 run scoreboard players remove heap:credit heap 1
 
 scoreboard players reset heap:average_tick_time heap
