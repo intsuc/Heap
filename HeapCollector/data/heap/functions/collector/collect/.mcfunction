@@ -4,7 +4,7 @@
 #
 # @within
 #   heap:api/collect
-#   heap:executor/schedule
+#   heap:executor/collect/
 
 data modify storage heap._: count_limit set from storage heap.config: count_limit
 data modify storage heap.config: count_limit set value 2147483647
