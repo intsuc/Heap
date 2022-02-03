@@ -1,11 +1,11 @@
-#> heap:core/task/count/
+#> heap:collector/count/
 #
 # @within
 #   minecraft:tick
-#   heap:core/task/collect
+#   heap:collector/collect/
 
 #>
-# @within heap:core/task/count/**
+# @within heap:collector/count/**
   #declare score_holder heap:credit
   #declare score_holder heap:link
   #declare score_holder heap:unlink
@@ -13,9 +13,9 @@
 
 execute store result score heap:credit heap run data get storage heap.config: count_limit
 
-execute if score heap:credit heap matches 1.. if data storage heap.collector: link[0] run function heap:core/task/count/link
+execute if score heap:credit heap matches 1.. if data storage heap.collector: link[0] run function heap:collector/count/link
 
-execute if score heap:credit heap matches 1.. if data storage heap.collector: unlink[0] run function heap:core/task/count/unlink
+execute if score heap:credit heap matches 1.. if data storage heap.collector: unlink[0] run function heap:collector/count/unlink
 
 scoreboard players reset heap:credit heap
 scoreboard players reset heap:link heap

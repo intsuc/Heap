@@ -1,6 +1,5 @@
 {
     "values": [
-        "heap:core/task/count/",
-        "heap:core/task/defrag/"
+        "heap:core/defrag/"
     ]
 }

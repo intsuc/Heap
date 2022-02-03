@@ -1,8 +1,8 @@
-#> heap:core/task/count/unlink
+#> heap:collector/count/unlink
 #
 # @within
-#   heap:core/task/count/
-#   heap:core/task/count/unlink
+#   heap:collector/count/
+#   heap:collector/count/unlink
 
 data modify storage heap._: arg.ptr set from storage heap.collector: unlink[-1]
 data remove storage heap.collector: unlink[-1]
@@ -15,4 +15,4 @@ function heap:core/touch_cell/internal/
   execute if score heap:count heap matches 1610612640 run data remove storage heap: _[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._[{i: 0b}]._
 
 scoreboard players remove heap:credit heap 1
-execute if score heap:credit heap matches 1.. if data storage heap.collector: unlink[0] run function heap:core/task/count/unlink
+execute if score heap:credit heap matches 1.. if data storage heap.collector: unlink[0] run function heap:collector/count/unlink
