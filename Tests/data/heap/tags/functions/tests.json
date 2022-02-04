@@ -8,6 +8,7 @@
         "heap:tests/collect_dead_weak_cell/",
         "heap:tests/deallocate/",
         "heap:tests/deallocate_free_ring_incremented/",
+        "heap:tests/deallocate_heap_occupied_size/",
         "heap:tests/deallocate_tail_cells/",
         "heap:tests/linked_weak_cell_live/",
         "heap:tests/touch_main/",

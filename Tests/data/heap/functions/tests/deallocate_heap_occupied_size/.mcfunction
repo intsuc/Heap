@@ -1,8 +1,8 @@
-#> heap:tests/allocate_heap_occupied_size/
+#> heap:tests/deallocate_heap_occupied_size/
 #
 # @within heap:tests
 
-say allocate_heap_occupied_size
+say deallocate_heap_occupied_size
 
 #>
 # @private
@@ -14,8 +14,10 @@ execute store result score heap:occupied_before heap run data get storage heap: 
 data modify storage heap._: arg set value {size: 2}
 function heap:api/allocate
 
+data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
+function heap:api/deallocate
+
 execute store result score heap:occupied_after heap run data get storage heap: occupied 1.0
-scoreboard players add heap:occupied_after heap 2
 
 execute unless score heap:occupied_before heap = heap:occupied_after heap run function heap:fail
 
