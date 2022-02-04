@@ -8,6 +8,6 @@
 #   storage heap._: arg
 #       ptr: int
 #           The pointer to the cell to be touched.
-#       multiple: bool? = false
+#       add: bool? = false
 
 function heap:core/touch_cell/s/

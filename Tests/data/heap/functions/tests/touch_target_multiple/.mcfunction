@@ -8,14 +8,14 @@ data modify storage heap._: arg set value {}
 function heap:api/allocate
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-data modify storage heap._: arg.multiple set value false
+data modify storage heap._: arg.add set value false
 function heap:api/touch/t
 
 data modify storage heap._: arg set value {}
 function heap:api/allocate
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-data modify storage heap._: arg.multiple set value true
+data modify storage heap._: arg.add set value true
 function heap:api/touch/t
 
 #>
