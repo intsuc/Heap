@@ -5,6 +5,9 @@
 # @input
 #   storage heap._: arg
 #       ptr: int
+#       multiple: bool? = false
+
+execute unless data storage heap._: arg.multiple run data modify storage heap._: arg.multiple set value false
 
 function heap:core/touch_cell/internal/
 
