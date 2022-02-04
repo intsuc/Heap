@@ -13,8 +13,8 @@ scoreboard objectives add examples dummy
 
 #>
 # @private
-#declare score_holder examples:ptr
-#declare score_holder examples:index
+  #declare score_holder examples:ptr
+  #declare score_holder examples:index
 
 execute store result score examples:ptr examples run data get storage examples._: arg.ptr 1.0
 execute store result score examples:index examples run data get storage examples._: arg.index 1.0

@@ -9,9 +9,9 @@ function heap:api/allocate
 
 #>
 # @private
-#declare score_holder heap:size_before
-#declare score_holder heap:size_after
-#declare score_holder heap:diff
+  #declare score_holder heap:size_before
+  #declare score_holder heap:size_after
+  #declare score_holder heap:diff
 
 execute store result score heap:size_before heap.tests run data get storage heap.free_ring: size
 
