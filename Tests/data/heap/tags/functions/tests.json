@@ -13,6 +13,7 @@
         "heap:tests/touch_main_and_target/",
         "heap:tests/touch_main_unaffected_by_touch_target/",
         "heap:tests/touch_target/",
+        "heap:tests/touch_target_multiple/",
         "heap:tests/touch_target_unaffected_by_touch_main/",
         "heap:tests/unlinked_weak_cell_dead/",
         "heap:tests/upgrade/"
