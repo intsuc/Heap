@@ -1,8 +1,8 @@
-#> heap:tests/touch_target_multiple/
+#> heap:tests/touch_target_add/
 #
 # @within heap:tests
 
-say touch_target_multiple
+say touch_target_add
 
 data modify storage heap._: arg set value {}
 function heap:api/allocate
