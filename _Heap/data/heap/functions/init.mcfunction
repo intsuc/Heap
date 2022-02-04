@@ -10,8 +10,11 @@
 #>
 # @public
 #declare storage heap:
-  # The cache of the last accessed offset.      | Internal              | Main                  | Target                | Source                |
-    data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+  # The cache of the last accessed offset.
+    data modify storage heap: cache_internal set value [{offset: -1}, {offset: -1, 1: 0b}, {offset: -1, 1: 0b, 2: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}]
+    data modify storage heap: cache_shift set value [{offset: -1}, {offset: -1, 1: 0b}, {offset: -1, 1: 0b, 2: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}]
+    data modify storage heap: cache_target set value [{offset: -1}, {offset: -1, 1: 0b}, {offset: -1, 1: 0b, 2: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}]
+    data modify storage heap: cache_source set value [{offset: -1}, {offset: -1, 1: 0b}, {offset: -1, 1: 0b, 2: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}, {offset: -1, 1: 0b, 2: 0b, 3: 0b, 4: 0b}]
   # The number of occupied cells.
     data modify storage heap: occupied set value 0
 
