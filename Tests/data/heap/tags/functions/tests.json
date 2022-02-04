@@ -9,11 +9,11 @@
         "heap:tests/deallocate/",
         "heap:tests/deallocate_free_ring_incremented/",
         "heap:tests/linked_weak_cell_live/",
-        "heap:tests/touch_1/",
-        "heap:tests/touch_1_and_2/",
-        "heap:tests/touch_1_unaffected_by_touch_2/",
-        "heap:tests/touch_2/",
-        "heap:tests/touch_2_unaffected_by_touch_1/",
+        "heap:tests/touch_main/",
+        "heap:tests/touch_main_and_target/",
+        "heap:tests/touch_main_unaffected_by_touch_target/",
+        "heap:tests/touch_target/",
+        "heap:tests/touch_target_unaffected_by_touch_main/",
         "heap:tests/unlinked_weak_cell_dead/",
         "heap:tests/upgrade/"
     ]

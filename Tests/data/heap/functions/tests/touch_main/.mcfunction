@@ -1,8 +1,8 @@
-#> heap:tests/touch_1/
+#> heap:tests/touch_main/
 #
 # @within heap:tests
 
-say touch_1
+say touch_main
 
 data modify storage heap._: arg set value {size: 2}
 function heap:api/allocate
