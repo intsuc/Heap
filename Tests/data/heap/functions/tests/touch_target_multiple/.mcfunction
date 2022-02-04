@@ -21,8 +21,8 @@ function heap:api/touch/t
 #>
 # @private
 #declare score_holder heap:count
-execute store result score heap:count heap.tests if data storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]
+execute store result score heap:count heap if data storage heap: _[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]._[{t: 0b}]
 
-execute unless score heap:count heap.tests matches 2 run function heap:fail
+execute unless score heap:count heap matches 2 run function heap:fail
 
-scoreboard players reset heap:count heap.tests
+scoreboard players reset heap:count heap
