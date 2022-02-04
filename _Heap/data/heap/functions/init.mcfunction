@@ -10,8 +10,8 @@
 #>
 # @public
 #declare storage heap:
-  # The cache of the last accessed offset.    | Internal              | Primary               | Secondary             |
-    data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+  # The cache of the last accessed offset.      | Internal              | Main                  | Target                | Source                |
+    data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
   # The number of occupied cells.
     data modify storage heap: occupied set value 0
 

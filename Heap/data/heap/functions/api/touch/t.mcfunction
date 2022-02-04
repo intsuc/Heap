@@ -1,6 +1,6 @@
-#> heap:api/touch/-
+#> heap:api/touch/t
 #
-# Makes the cell referenced by `ptr` accessible by the secondary heap accessor.
+# Makes the cell referenced by `ptr` accessible by the target heap accessor.
 #
 # @api
 #
@@ -10,4 +10,4 @@
 #           The pointer to the cell to be touched.
 #       multiple: bool? = false
 
-function heap:core/touch_cell/filter/
+function heap:core/touch_cell/t/
