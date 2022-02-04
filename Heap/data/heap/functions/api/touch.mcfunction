@@ -1,6 +1,6 @@
-#> heap:api/touch/
+#> heap:api/touch
 #
-# Makes the cell referenced by `ptr` accessible by the primary heap accessor.
+# Makes the cell referenced by `ptr` accessible by the main heap accessor.
 #
 # @api
 #

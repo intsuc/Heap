@@ -20,6 +20,6 @@ function heap:api/link
 function heap:api/collect
 
 data modify storage heap._: arg.ptr set from storage heap._: temp.targets[0]
-function heap:api/touch/
+function heap:api/touch
 
 execute unless data storage heap: _[-6]._[-6]._[-6]._[-6]._[-6]._[-6]._ run function heap:fail

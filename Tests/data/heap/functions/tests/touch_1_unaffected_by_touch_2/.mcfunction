@@ -8,7 +8,7 @@ data modify storage heap._: arg set value {size: 4}
 function heap:api/allocate
 
 data modify storage heap._: arg.ptr set from storage heap._: ret.ptr
-function heap:api/touch/
+function heap:api/touch
 
 function heap:api/touch/-
 
