@@ -12,8 +12,8 @@
 #declare storage heap:
   # The cache of the last accessed offset.    | Internal              | Primary               | Secondary             |
     data modify storage heap: cache set value [I; -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-  # The number of free cells.
-    data modify storage heap: free set value 46656
+  # The number of occupied cells.
+    data modify storage heap: occupied set value 0
 
 #>
 # @public
@@ -32,6 +32,7 @@
 #declare storage heap.config:
   data modify storage heap.config: count_limit set value 1
   data modify storage heap.config: defrag_limit set value 1
+  data modify storage heap.config: collect_threshold set value 34992
 
 #>
 # @internal

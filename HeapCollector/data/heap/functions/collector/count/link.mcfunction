@@ -1,8 +1,6 @@
 #> heap:collector/count/link
 #
-# @within
-#   heap:collector/count/
-#   heap:collector/count/link
+# @within heap:collector/count/**
 
 execute store result score heap:link heap store result storage heap._: arg.ptr int 1.0 run data get storage heap.collector: link[-1] 1.0
 data remove storage heap.collector: link[-1]

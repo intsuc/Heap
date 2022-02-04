@@ -3,7 +3,7 @@
         "heap:tests/allocate_success/",
         "heap:tests/allocate_default_size_1/",
         "heap:tests/allocate_default_strong/",
-        "heap:tests/allocate_heap_free_size/",
+        "heap:tests/allocate_heap_occupied_size/",
         "heap:tests/allocate_weak_count/",
         "heap:tests/collect_dead_weak_cell/",
         "heap:tests/deallocate/",

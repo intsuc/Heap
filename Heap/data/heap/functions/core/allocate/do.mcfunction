@@ -4,15 +4,15 @@
 
 #>
 # @private
-  #declare score_holder heap:free
+  #declare score_holder heap:occupied
   #declare score_holder heap:size
 
-execute store result score heap:free heap run data get storage heap: free 1.0
+execute store result score heap:occupied heap run data get storage heap: free 1.0
 execute store result score heap:size heap run data get storage heap._: arg.size 1.0
 
-execute store result storage heap: free int 1.0 run scoreboard players operation heap:free heap -= heap:size heap
+execute store result storage heap: occupied int 1.0 run scoreboard players operation heap:occupied heap += heap:size heap
 
-scoreboard players reset heap:free heap
+scoreboard players reset heap:occupied heap
 scoreboard players reset heap:size heap
 
 data modify storage heap._: cell set value {i: 0b}

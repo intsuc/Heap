@@ -1,8 +1,6 @@
 #> heap:collector/count/unlink
 #
-# @within
-#   heap:collector/count/
-#   heap:collector/count/unlink
+# @within heap:collector/count/**
 
 data modify storage heap._: arg.ptr set from storage heap.collector: unlink[-1]
 data remove storage heap.collector: unlink[-1]
